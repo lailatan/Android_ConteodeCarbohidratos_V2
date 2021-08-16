@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:background="@drawable/borde_color3_fondo_oscuro"
+    tools:context=".ComidaSelAlimentoActivity">
+
+    <LinearLayout
+        style="@style/LinearLayoutNombrePantalla"
+        android:background="@drawable/borde_color3_fino">
+
+        <TextView
+            style="@style/TextViewNombrePantalla"
+            android:textColor="@color/color3_oscuro"
+            android:text="@string/add_food"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight=".14"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            app:srcCompat="@drawable/comidamas_ic_sf" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        style="@style/LinearLayoutSeccion"
+                        android:background="@drawable/borde_color3_fino">
+
+                        <TextView
+                            style="@style/TextViewTitulo"
+                            android:textColor="@color/color3_claro"
+                            android:background="@drawable/borde_color3_pleno"
+                            android:text="@string/data_new_food" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/TextViewIngresoDatos"
+                                android:textColor="@color/color3_oscuro"
+                                android:text="@string/name"/>
+
+                            <EditText
+                                style="@style/EditTextIngresoDatos"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:hint="@string/enter_food"
+                                android:textColorHint="@color/color3"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:clickable="true"
+                                android:cursorVisible="false"
+                                android:focusable="false"
+                                android:tag="0"
+                                android:onClick="clickBuscarAlimento"
+                                android:id="@+id/fragNombreET" />
+
+                            <TextView
+                                style="@style/estiloBotonPequeño"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".2"
+                                android:text="..."
+                                android:background="@drawable/borde_color3_fino"
+                                android:textColor="@color/color3_oscuro"
+                                android:tag="0"
+                                android:onClick="clickBuscarAlimento"
+                                android:id="@+id/fragBuscarAlimentoBT" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold|italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text="@string/category"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:id="@+id/fragCategoriaTV" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold|italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text="@string/brand"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:id="@+id/fragMarcaTV" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold|italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text="@string/unit"
+                                android:id="@+id/fragPorcionUniLBL"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:id="@+id/fragPorcionUniTV" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal"
+                            android:id="@+id/fragPorcionCantLL">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold|italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text="@string/quantity"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:id="@+id/fragPorcionCantTV" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold|italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text="  =  "/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold|italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text="@string/grams2"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:id="@+id/fragPorcionGrTV" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal"
+                            android:id="@+id/fragCarboLL">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold|italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text="@string/equiv_grams_carbs"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:id="@+id/fragCarboTV" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal"
+                            android:id="@+id/fragTiempoEsperaLL">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold|italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text="@string/waiting_time"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:id="@+id/fragTiempoEsperaTV" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold|italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text="@string/for_celiac"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:id="@+id/fragAptoCelTV" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold|italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text="  /  "/>
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold|italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text="@string/fast_absorption"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:id="@+id/fragAbsRapidaTV" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        style="@style/LinearLayoutSeccion"
+                        android:background="@drawable/borde_color3_fino">
+
+                        <TextView
+                            style="@style/TextViewTitulo"
+                            android:textColor="@color/color3_claro"
+                            android:background="@drawable/borde_color3_pleno"
+                            android:text="@string/dama_amount_new_food" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:id="@+id/fragUnidoGrLL">
+
+                            <RadioGroup
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:id="@+id/fragUnidoGrRG">
+
+                                <TextView
+                                    style="@style/TextViewIngresoDatos"
+                                    android:textColor="@color/color3_oscuro"
+                                    android:text="@string/quantity_in"/>
+
+                                <RadioButton
+                                    style="@style/EditTextIngresoDatos"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".40"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="@string/unit2"
+                                    android:checked="true"
+                                    android:onClick="clickMedidaGramoRB"
+                                    android:id="@+id/fragUnidadesRB" />
+
+                                <RadioButton
+                                    style="@style/EditTextIngresoDatos"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".4"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="@string/grams"
+                                    android:onClick="clickMedidaGramoRB"
+                                    android:id="@+id/fragGrRB"/>
+                            </RadioGroup>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:orientation="horizontal"
+                            android:id="@+id/referenciaLL">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold|italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text="("/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold|italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text="@string/reference"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:id="@+id/cantidadReferenciaTV"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:id="@+id/unidadReferenciaTV"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text=" = "/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:id="@+id/carbsReferenciaTV"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="italic"
+                                android:layout_marginRight="5dp"
+                                android:textColor="@color/colorPrimaryDark_enabled"
+                                android:text="grCH )"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal"
+                            android:id="@+id/fragCantidadLL">
+
+                            <TextView
+                                style="@style/TextViewIngresoDatos"
+                                android:textColor="@color/color3_oscuro"
+                                android:text="@string/quantity_total"/>
+
+                            <EditText
+                                style="@style/EditTextIngresoDatos"
+                                android:selectAllOnFocus="true"
+                                android:hint="@string/enter_quantity"
+                                android:textColorHint="@color/color3"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:id="@+id/fragCantidadET" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:background="@drawable/borde_color3_fino"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold|italic"
+                                android:layout_margin="5dp"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                android:textColor="@color/color3_oscuro"
+                                android:text="@string/total_grams_carbs"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:id="@+id/fragCarboEquivalentesTV" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/FABDerecha"
+            android:id="@+id/guardarFAB"
+            android:onClick="clickFABGuardar"
+            app:backgroundTint="@color/color3"
+            android:src="@drawable/ic_ok"/>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/FABCentro"
+            android:id="@+id/deleteFAB"
+            android:onClick="clickFABBorrar"
+            app:backgroundTint="@color/color3" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/FABIzquierda"
+            android:id="@+id/cancelFAB"
+            android:onClick="clickFABCancelar"
+            app:backgroundTint="@color/color3" />
+
+    </RelativeLayout>
+</LinearLayout>

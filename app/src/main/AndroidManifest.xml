@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.conteodecarbohidratos">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".BuscarEnTodosAlimentosActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ComidaSelAlimentoActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".ComidaActivity" />
+        <activity
+            android:name=".BackupRestoreActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".UnidadActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".CategoriaActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".BuscarUnidadActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".BuscarCategoriaActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MarcaActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".BuscarMarcaActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MantenimientoActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".NotaActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".BuscarNotaActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".AlimentoActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".AlimentoTablaActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".BuscarAlimentoEnTablaActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".BuscarAlimentoActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/SplashTheme"> <!-- Aquí llamamos nuestro tema -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

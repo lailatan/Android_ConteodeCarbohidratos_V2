@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlimentoActivity"
+    android:background="@drawable/borde_color2_fondo_oscuro"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/LinearLayoutNombrePantalla"
+        android:background="@drawable/borde_color1_fino">
+
+        <TextView
+            style="@style/TextViewNombrePantalla"
+            android:textColor="@color/color2_oscuro"
+            android:text="@string/food_data"
+            android:id="@+id/nombreATTV" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight=".16"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            app:srcCompat="@drawable/personal_ic_sf" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/LinearLayoutSeccion"
+                    android:background="@drawable/borde_color2_fino">
+
+                    <TextView
+                        style="@style/TextViewTitulo"
+                        android:textColor="@color/color2_claro"
+                        android:background="@drawable/borde_color2_pleno"
+                        android:text="@string/general_data" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color2_oscuro"
+                            android:text="@string/name"/>
+
+                        <EditText
+                            style="@style/EditTextIngresoDatos"
+                            android:hint="@string/enter_food_name"
+                            android:textColorHint="@color/color2"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPersonName|textCapSentences"
+                            android:id="@+id/entradaNombreET" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color2_oscuro"
+                            android:text="@string/category"/>
+
+                        <EditText
+                            style="@style/EditTextIngresoDatos"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:hint="@string/enter_food_category"
+                            android:textColorHint="@color/color2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:clickable="true"
+                            android:cursorVisible="false"
+                            android:focusable="false"
+                            android:onClick="MostrarCategorias"
+                            android:tag="0"
+                            android:id="@+id/entradaCategoriaET" />
+
+                        <TextView
+                            style="@style/estiloBotonPequeño"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".2"
+                            android:text="..."
+                            android:background="@drawable/borde_color2_fino"
+                            android:onClick="MostrarCategorias"
+                            android:textColor="@color/color2_oscuro"
+                            android:tag="0"
+                            android:id="@+id/buscarCategoriaBT" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color2_oscuro"
+                            android:text="@string/brand"/>
+
+                        <EditText
+                            style="@style/EditTextIngresoDatos"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:hint="@string/enter_food_brand"
+                            android:textColorHint="@color/color2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:onClick="MostrarMarcas"
+                            android:clickable="true"
+                            android:cursorVisible="false"
+                            android:focusable="false"
+                            android:tag="0"
+                            android:id="@+id/entradaMarcaET" />
+
+                        <TextView
+                            style="@style/estiloBotonPequeño"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".18"
+                            android:text="..."
+                            android:background="@drawable/borde_color2_fino"
+                            android:onClick="MostrarMarcas"
+                            android:textColor="@color/color2_oscuro"
+                            android:tag="0"
+                            android:id="@+id/buscarMarcasBT" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LinearLayoutSeccion"
+                    android:background="@drawable/borde_color2_fino">
+
+                    <TextView
+                        style="@style/TextViewTitulo"
+                        android:background="@drawable/borde_color2_pleno"
+                        android:textColor="@color/color2_claro"
+                        android:text="@string/portion_data" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no_carbs"
+                        android:onClick="clickNoAportaCarbs"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:id="@+id/NoContabilizaCB"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:id="@+id/entradaPorcionUniLL">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color2_oscuro"
+                            android:text="@string/unit"/>
+
+                        <EditText
+                            style="@style/EditTextIngresoDatos"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:hint="@string/enter_food_unit"
+                            android:textColorHint="@color/color2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:onClick="MostrarUnidades"
+                            android:clickable="true"
+                            android:cursorVisible="false"
+                            android:focusable="false"
+                            android:tag="0"
+                            android:id="@+id/entradaPorcionUniET" />
+
+                        <TextView
+                            style="@style/estiloBotonPequeño"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".19"
+                            android:text="..."
+                            android:background="@drawable/borde_color2_fino"
+                            android:onClick="MostrarUnidades"
+                            android:textColor="@color/color2_oscuro"
+                            android:tag="0"
+                            android:id="@+id/buscarUnidadBT" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal"
+                        android:id="@+id/entradaPorcionCantLL">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color2_oscuro"
+                            android:text="@string/quantity"/>
+
+                        <EditText
+                            style="@style/EditTextIngresoDatos"
+                            android:hint="@string/enter_food_portionquantity"
+                            android:textColorHint="@color/color2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:id="@+id/entradaPorcionCantET" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal"
+                        android:id="@+id/entradaPorcionGrLL">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color2_oscuro"
+                            android:text="@string/equiv_grams_optional"/>
+
+                        <EditText
+                            style="@style/EditTextIngresoDatos"
+                            android:hint="@string/enter_food_portion_grams"
+                            android:textColorHint="@color/color2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:id="@+id/entradaPorcionGrET" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal"
+                        android:id="@+id/entradaCarboLL">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color2_oscuro"
+                            android:text="@string/equiv_grams_carbs"/>
+
+                        <EditText
+                            style="@style/EditTextIngresoDatos"
+                            android:hint="@string/enter_food_carbs"
+                            android:textColorHint="@color/color2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:imeOptions="actionNext"
+                            android:inputType="numberDecimal"
+                            android:id="@+id/entradaCarboET" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal"
+                        android:id="@+id/entradaTiempoLL">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color2_oscuro"
+                            android:text="@string/waiting_time"/>
+
+                        <EditText
+                            style="@style/EditTextIngresoDatos"
+                            android:hint="@string/enter_food_delay"
+                            android:textColorHint="@color/color2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:id="@+id/entradaTiempoET" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LinearLayoutSeccion"
+                    android:background="@drawable/borde_color2_fino">
+
+                    <TextView
+                        style="@style/TextViewTitulo"
+                        android:textColor="@color/color2_claro"
+                        android:background="@drawable/borde_color2_pleno"
+                        android:text="@string/aditional_data" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:onClick="clickRBAptoCel"
+                            android:id="@+id/entradaAptoCelRG">
+
+                            <TextView
+                                style="@style/TextViewIngresoDatos"
+                                android:layout_width="0dp"
+                                android:layout_weight=".35"
+                                android:textColor="@color/color2_oscuro"
+                                android:text="@string/for_celiac"/>
+
+                            <RadioButton
+                                style="@style/EditTextIngresoDatos"
+                                android:layout_width="0dp"
+                                android:layout_weight=".20"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:text="@string/no"
+                                android:onClick="clickRBAptoCel"
+                                android:id="@+id/aptoNORB"/>
+
+                            <RadioButton
+                                style="@style/EditTextIngresoDatos"
+                                android:layout_width="0dp"
+                                android:layout_weight=".2"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:text="@string/yes"
+                                android:onClick="clickRBAptoCel"
+                                android:id="@+id/aptoSIRB"/>
+                            <RadioButton
+                                style="@style/EditTextIngresoDatos"
+                                android:layout_width="0dp"
+                                android:layout_weight=".25"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:checked="true"
+                                android:text="@string/dont_know"
+                                android:onClick="clickRBAptoCel"
+                                android:id="@+id/aptoNSRB"/>
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:onClick="clickRadioAbsorcion"
+                            android:id="@+id/entradaAbsRapidaRG">
+
+                            <TextView
+                                style="@style/TextViewIngresoDatos"
+                                android:layout_width="0dp"
+                                android:layout_weight=".35"
+                                android:textColor="@color/color2_oscuro"
+                                android:text="@string/fast_absorption"/>
+
+                            <RadioButton
+                                style="@style/EditTextIngresoDatos"
+                                android:layout_width="0dp"
+                                android:layout_weight=".2"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:text="@string/no"
+                                android:onClick="clickRadioAbsorcion"
+                                android:id="@+id/rapidoNORB"/>
+                            <RadioButton
+                                style="@style/EditTextIngresoDatos"
+                                android:layout_width="0dp"
+                                android:layout_weight=".2"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:text="@string/yes"
+                                android:onClick="clickRadioAbsorcion"
+                                android:id="@+id/rapidoSIRB"/>
+                            <RadioButton
+                                style="@style/EditTextIngresoDatos"
+                                android:layout_width="0dp"
+                                android:layout_weight=".25"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:checked="true"
+                                android:text="@string/dont_know"
+                                android:onClick="clickRadioAbsorcion"
+                                android:id="@+id/rapidoNSRB"/>
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color2_oscuro"
+                            android:text="@string/ingredients"/>
+
+                        <EditText
+                            style="@style/EditTextIngresoDatos"
+                            android:hint="@string/enter_food_ingredients"
+                            android:textColorHint="@color/color2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:imeOptions="actionNext"
+                            android:inputType="textPersonName|textMultiLine|textCapSentences"
+                            android:lines="8"
+                            android:minLines="4"
+                            android:gravity="top|left"
+                            android:maxLines="10"
+                            android:scrollbars="vertical"
+                            android:id="@+id/ingredientesET" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color2_oscuro"
+                            android:text="@string/comments"/>
+
+                        <EditText
+                            style="@style/EditTextIngresoDatos"
+                            android:hint="@string/enter_food_comments"
+                            android:textColorHint="@color/color2"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPersonName|textCapSentences|textMultiLine"
+                            android:lines="8"
+                            android:minLines="4"
+                            android:gravity="top|left"
+                            android:maxLines="10"
+                            android:scrollbars="vertical"
+                            android:id="@+id/comentariosET" />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/FABDerecha"
+            android:id="@+id/guardarFAB"
+            android:onClick="clickFABGuardar"
+            app:backgroundTint="@color/color2"
+            android:src="@drawable/ic_ok"/>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/FABCentro"
+            android:id="@+id/deleteFAB"
+            android:onClick="clickFABBorrar"
+            app:backgroundTint="@color/color2"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/FABIzquierda"
+            android:id="@+id/cancelFAB"
+            android:onClick="clickFABCancelar"
+            app:backgroundTint="@color/color2" />
+    </RelativeLayout>
+</LinearLayout>

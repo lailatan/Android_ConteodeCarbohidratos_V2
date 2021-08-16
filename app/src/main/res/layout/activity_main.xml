@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/borde_color6_fino"
+    android:layout_margin="10dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/estiloBotonGrande"
+            android:background="@drawable/borde_color1_fino"
+            android:drawableRight="@drawable/tabla_ic_sf"
+            android:onClick="clickAlimentosGenerales"
+            android:text="@string/generalfood"
+            android:layout_margin="5dp"
+            android:textColor="@color/color1_oscuro" />
+
+        <TextView
+            style="@style/estiloBotonGrande"
+            android:background="@drawable/borde_color2_fino"
+            android:drawableRight="@drawable/personal_ic_sf"
+            android:onClick="clickAlimentosPersonales"
+            android:text="@string/personalfood"
+            android:layout_margin="5dp"
+            android:textColor="@color/color2_oscuro" />
+
+        <TextView
+            style="@style/estiloBotonGrande"
+            android:background="@drawable/borde_color3_fino"
+            android:drawableRight="@drawable/comida_ic_sf"
+            android:text="@string/make_a_plate"
+            android:layout_margin="5dp"
+            android:onClick="clickArmarComida"
+            android:textColor="@color/color3_oscuro" />
+
+        <TextView
+            style="@style/estiloBotonGrande"
+            android:background="@drawable/borde_color4_fino"
+            android:drawableRight="@drawable/nota_ic_sf"
+            android:text="@string/notes"
+            android:layout_margin="5dp"
+            android:onClick="clickBuscarNotas"
+            android:textColor="@color/color4_oscuro" />
+
+        <TextView
+            style="@style/estiloBotonGrande"
+            android:background="@drawable/borde_color5_fino"
+            android:drawableRight="@drawable/mantenimiento_ic_sf"
+            android:text="@string/admin"
+            android:layout_margin="5dp"
+            android:onClick="clickMantenimiento"
+            android:textColor="@color/color5_oscuro" />
+
+    </LinearLayout>
+
+</LinearLayout>

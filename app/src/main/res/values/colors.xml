@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#dbdeff</color>
+    <color name="colorPrimaryDark">#00065c</color>
+    <color name="colorPrimaryDark_enabled">#00065c</color>
+    <color name="colorAccent">#2A3195</color>
+
+    <color name="color6_claro">#FFBB86FC</color>
+    <color name="color6">#FF6200EE</color>
+    <color name="color6_oscuro">#FF3700B3</color>
+    <!--
+    <color name="color6_claro">#dbdeff</color>
+    <color name="color6">#2A3195</color>
+    <color name="color6_oscuro">#00065c</color>
+    -->
+    <!--
+    Azul 2A3195    42 49 149
+    Claro     #dbdeff    219, 222, 255
+    Oscuro    00065c    0, 6, 92
+    -->
+
+    <color name="color5_light">#ff96dd</color>
+    <color name="color5_claro">#ffffff</color>
+    <color name="color5">#A93583</color>
+    <color name="color5_oscuro">#70004b</color>
+    <!--
+    Violeta A93583 169 53 131
+    Claro ff96dd 255, 150, 221
+    Oscuro 70004b 112, 0, 75
+    -->
+
+    <color name="color4_light">#ff8fae</color>
+    <color name="color4_claro">#ffffff</color>
+    <color name="color4">#DA3361</color>
+    <color name="color4_oscuro">#850025</color>
+    <!--
+    Rojo DA3361 218 51 97
+    Claro ff8fae 255, 143, 174
+    Oscuro 850025 133, 0, 37
+    -->
+
+    <color name="color3_light">#ff948a</color>
+    <color name="color3_claro">#ffffff</color>
+    <color name="color3">#F65D4E</color>
+    <color name="color3_oscuro">#850c00</color>
+    <!--
+    Rosa F65D4E 246 93 78
+    Claro ff948a 255, 148, 138
+    Oscuro 850c00 133, 12, 0         DE3C5F 222 60 95
+    -->
+
+    <color name="color2_light">#ffd3a8</color>
+    <color name="color2_claro">#ffffff</color>
+    <color name="color2">#F39943</color>
+    <color name="color2_oscuro">#a65200</color>
+    <!--
+    Naranja F39943 243 153 67
+    Oscuro a65200 166, 82, 0         F95E39 249 94 57
+    Claro ffd3a8 255, 211, 168
+    -->
+
+    <color name="color1_light">#fff5b3</color>
+    <color name="color1_claro">#ffffff</color>
+    <color name="color1">#EED73F</color>
+    <color name="color1_oscuro">#cfb300</color>
+    <color name="black_overlay">#66000000</color>
+    <!--
+    Amarillo EED73F RGB 238 215 63 93
+    Oscuro cfb300 207, 179, 0        F7B634247 182 52 97
+    Claro fff5b3 255, 245, 179       FFEA06 255 234 6
+    -->
+    <color name="active">#39a127</color>
+
+</resources>

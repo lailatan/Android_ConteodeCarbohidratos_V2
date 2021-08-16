@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ComidaActivity"
+    android:background="@drawable/borde_color3_fondo_oscuro"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/LinearLayoutNombrePantalla"
+        android:background="@drawable/borde_color3_fino">
+
+        <TextView
+            style="@style/TextViewNombrePantalla"
+            android:textColor="@color/color3_oscuro"
+            android:text="@string/make_a_plate"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight=".14"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            app:srcCompat="@drawable/comida_ic_sf" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LinearLayoutSeccion"
+        android:background="@drawable/borde_color3_fino">
+
+
+        <TextView
+            style="@style/TextViewTitulo"
+            android:textColor="@color/color3_claro"
+            android:background="@drawable/borde_color3_pleno"
+            android:text="@string/plate_data" />
+
+
+        <TableLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:weightSum="4">
+            <TableRow>
+                <TextView
+                    style="@style/TablaRowTitulo"
+                    android:text="Cálculo de Carbohidratos"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/color3" />
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <TableLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:padding="5dp"
+                android:weightSum="4">
+                <TableRow>
+                    <TextView
+                        style="@style/TablaRowTitulo"
+                        android:text="@string/total_carbs"/>
+                    <TextView
+                        style="@style/TablaRowTitulo"
+                        android:text="@string/total_insulin"/>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        style="@style/TablaRowDato"
+                        android:id="@+id/carbTotalTV"/>
+                    <TextView
+                        style="@style/TablaRowDato"
+                        android:id="@+id/insulinaTotalTV"/>
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/estiloBotonPequeño"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:background="@drawable/borde_color3_fino"
+            android:onClick="clickLimpiar"
+            android:text="@string/clean"
+            android:layout_marginLeft="2dp"
+            android:textColor="@color/color3_oscuro"
+            android:id="@+id/limpiarBT"/>
+
+        <TextView
+            style="@style/estiloBotonPequeño"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="@string/ratio"
+            android:background="@drawable/borde_color3_fino"
+            android:textColor="@color/color3_oscuro"
+            android:tag="0"
+            android:onClick="clickRatio"
+            android:id="@+id/fragBuscarAlimentoBT" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LinearLayoutSeccion"
+        android:background="@drawable/borde_color3_fino">
+
+        <TextView
+            style="@style/TextViewTitulo"
+            android:textColor="@color/color3_claro"
+            android:background="@drawable/borde_color3_pleno"
+            android:text="@string/food_plate" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/borde_color3_fino">
+
+            <ListView
+                android:id="@+id/alimentosListaLV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/color3_oscuro"
+                android:dividerHeight="1dp"
+                android:scrollbarThumbVertical="@drawable/scrollbar_vertical" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                style="@style/FABDerecha"
+                android:id="@+id/fabAdd"
+                android:onClick="clickAgregarAlimento"
+                android:src="@drawable/ic_add"
+                app:backgroundTint="@color/color3" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                style="@style/FABIzquierda"
+                android:id="@+id/cancelFAB"
+                android:onClick="clickFABCancelar"
+                app:backgroundTint="@color/color3" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

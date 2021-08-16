@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BackupRestoreActivity"
+    android:background="@drawable/borde_color5_fondo_oscuro"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/LinearLayoutNombrePantalla"
+        android:background="@drawable/borde_color5_fino">
+
+        <TextView
+            style="@style/TextViewNombrePantalla"
+            android:textColor="@color/color5_oscuro"
+            android:text="@string/backup_restore"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight=".12"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            app:srcCompat="@drawable/backup_ic_sf" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:background="@drawable/borde_color5_fino">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/LinearLayoutSeccion"
+                android:background="@drawable/borde_color5_fino">
+
+                <TextView
+                    style="@style/TextViewTitulo"
+                        android:textColor="@color/color5_claro"
+                        android:background="@drawable/borde_color5_pleno"
+                        android:text="@string/actions" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/backupBT"
+                        style="@style/estiloBotonPequeño"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/borde_color5_fino"
+                        android:onClick="clickBackup"
+                        android:text="@string/backup"
+                        android:textColor="@color/color5_oscuro" />
+
+                    <TextView
+                        android:id="@+id/restoreBT"
+                        style="@style/estiloBotonPequeño"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/borde_color5_fino"
+                        android:onClick="clickRestore"
+                        android:text="@string/restore"
+                        android:textColor="@color/color5_oscuro" />
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/indicadorPB"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_margin="10dp"
+                    android:max="120"
+                    android:progress="0"
+                    android:backgroundTint="@color/color5_oscuro"/>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/progresoTV"
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="top|left"
+                        android:lines="100" />
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/FABIzquierda"
+            android:id="@+id/cancelFAB"
+            android:onClick="clickVolver"
+            app:backgroundTint="@color/color5"  />
+
+    </RelativeLayout>
+</LinearLayout>

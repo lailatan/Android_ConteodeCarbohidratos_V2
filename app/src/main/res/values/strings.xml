@@ -1,0 +1,149 @@
+<resources>
+    <string name="app_name">Conteo CH</string>
+    <string name="food">Alimento</string>
+    <string name="search_food">Buscar Alimento</string>
+    <string name="food_name">Nombre del Alimento</string>
+    <string name="enter_food_name"><i><font size="15">Ingrese el Nombre</font></i></string>
+    <string name="food_brand">Marca del Alimento</string>
+    <string name="enter_food_brand"><i><font size="15">Seleccione la marca</font></i></string>
+    <string name="food_category">Categoría de Alimento</string>
+    <string name="enter_food_category"><i><font size="15">Seleccione una categoría</font></i></string>
+    <string name="food_type">Tipo de Alimento</string>
+    <string name="enter_food_type"><i><font size="15">Seleccione tipo</font></i></string>
+    <string name="make_a_plate">Armar una Comida</string>
+    <string name="search_alimento">Buscar</string>
+    <string name="new_alimento">Nuevo</string>
+    <string name="save">Guardar</string>
+    <string name="delete">Eliminar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="personalfood">Alimentos Personales</string>
+    <string name="generalfood">Tabla de Alimentos</string>
+    <string name="category">Categoría: </string>
+    <string name="brand"><u>Marca: </u></string>
+    <string name="search">Buscar</string>
+    <string name="select_one_category"><i><font size="15">Selecciones una Categoría</font></i></string>
+    <string name="portion">Porción: </string>
+    <string name="carbs_gr">Gr. de Carbohidratos: </string>
+    <string name="notes">Notas / Tips</string>
+    <string name="admin">Mantenimiento</string>
+    <string name="back_food">Volver</string>
+    <string name="clean">Limpiar</string>
+    <string name="not_found">No se encontraron Alimentos con esos criterios de búsqueda.</string>
+    <string name="search_table_food">Buscar en Tabla</string>
+    <string name="enter_food_portion"><i><font size="15">Ingrese la Porción</font></i></string>
+    <string name="enter_food_carbs"><i><font size="15">Ingrese los Carbohidratos de la Porción</font></i></string>
+    <string name="enter_food_delay"><i><font size="15">Ingrese Tiempo de Espera para ingesta</font></i></string>
+    <string name="enter_food_ingredients"><i><font size="15">Ingrese los Ingredientes Principales</font></i></string>
+    <string name="enter_food_comments"><i><font size="15">Ingrese Comentarios a tener en cuenta</font></i></string>
+    <string name="for_celiac">Apto Celíacos:</string>
+    <string name="no">No</string>
+    <string name="si">Si</string>
+    <string name="dont_know">NS/NE</string>
+    <string name="yes">Si</string>
+    <string name="fast_absorption">Absorción rápída:</string>
+    <string name="delete_confirmation">¿Desea eliminar este Alimento?</string>
+    <string name="delete_brand_confirmation">¿Desea eliminar esta Marca?</string>
+    <string name="delete_category_confirmation">¿Desea eliminar esta Categoria?</string>
+    <string name="delete_unit_confirmation">¿Desea eliminar esta Medida?</string>
+    <string name="select_one_brand"><i><font size="15">Seleccione una Marca</font></i></string>
+    <string name="enter_food_unit"><i><font size="15">Seleccione una Medida</font></i></string>
+    <string name="enter_food_portionquantity"><i><font size="15">Ingrese la Cantidad de Porciones</font></i></string>
+    <string name="enter_food_portion_grams"><i><font size="15">Ingrese los Gramos</font></i></string>
+    <string name="select_one_unit"><i><font size="15">Seleccione una Medida</font></i></string>
+    <string name="estimate">Apróx. </string>
+    <string name="name"><u>Nombre: </u></string>
+    <string name="food_data">Datos del Alimento</string>
+    <string name="search_notes">Buscar Notas</string>
+    <string name="enter_note_title"><i><font size="15">Ingrese el título</font></i></string>
+    <string name="note">Nota </string>
+    <string name="enter_note_body"><i><font size="15">Escriba la Nota aquí...</font></i></string>
+    <string name="delete_note_confirmation">¿Desea eliminar esta Nota?</string>
+    <string name="food_unit">Medidas</string>
+    <string name="brands">Marcas</string>
+    <string name="categories">Categorías</string>
+    <string name="search_brand">Buscar Marca</string>
+    <string name="search_unit">Buscar Medida</string>
+    <string name="search_category">Buscar Categoría</string>
+    <string name="unit"><u>Medida: </u></string>
+    <string name="quantity"><u>Cantidad: </u></string>
+    <string name="equiv_grams_optional">Gramos Equivalentes: </string>
+    <string name="equiv_grams_carbs"><u>Carbohidratos (gr): </u></string>
+    <string name="general_data">Datos Generales:</string>
+    <string name="portion_data">Datos de la Porción:</string>
+    <string name="aditional_data">Datos Adicionales:</string>
+    <string name="waiting_time">Tiempo de Espera (min): </string>
+    <string name="ingredients">Ingredientes:</string>
+    <string name="comments">Comentarios:</string>
+    <string name="search_criterial">Criterios de Búsqueda:</string>
+    <string name="outcome">Resultado:</string>
+    <string name="description">"Descripción: "</string>
+    <string name="enter_description"><i><font size="15">Ingrese la descripción</font></i></string>
+    <string name="date_last_update">Últ. Fecha:</string>
+    <string name="category2">Categoría</string>
+    <string name="brand2">Marca</string>
+    <string name="unit2">Medida</string>
+    <string name="enter_name"><i><font size="15">Ingrese el Nombre</font></i></string>
+    <string name="hide">Ocultar</string>
+    <string name="show">Mostrar</string>
+    <string name="backup_restore">Backup/Restore</string>
+    <string name="backup">Backup de Archivos</string>
+    <string name="backup_confirmation">Se creará una copia de respaldo en su dispositivo. ¿Desea continuar?</string>
+    <string name="restore">Restaurar Archivos</string>
+    <string name="restore_confirmation">Se copiará un respaldo de los datos de la aplicacion (se perderá los datos existentes). ¿Desea continuar?</string>
+    <string name="backup_success">Copia realizada con éxito del Archivo: \n</string>
+    <string name="backup_fail_permission">No se pudo generar la copia de respaldo. Verifique los permisos de la aplicación.</string>
+    <string name="backup_fail_space_or_permission">No se pudo generar la copia de respaldo. Verifique que tenga espacio en almacenamiento en el dispositivo y/o permisos de la aplicación.</string>
+    <string name="restore_success">Archivo restaurado con éxito: \n</string>
+    <string name="restore_fail_filenotfound">No se encontró el Archivo: \n</string>
+    <string name="restore_fail_permission">No se pueden restaurar los Archivos de respaldo. Verifique los permisos de la aplicación.</string>
+    <string name="restore_fail_spaceorpermission">No se pudo restaurar la copia de respaldo. Verifique que existan los archivos de respaldo, que tenga espacio libre de almacenamiento en el dispositivo y/o permisos de la aplicación.</string>
+    <string name="actions">Acciones</string>
+    <string name="must_enter_name">Debe ingresar un Nombre.</string>
+    <string name="must_select_category">Debe seleccionar una Categoía.</string>
+    <string name="must_select_brand">Debe seleccionar una Marca.</string>
+    <string name="must_enter_unit">Debe ingresar una Unidad de Porción.</string>
+    <string name="must_enter_portion">Debe ingresar una Porción.</string>
+    <string name="must_enter_carbs">Debe ingresar la cantidad de CarboHidratos equivalentes.</string>
+    <string name="cant_modify_category">No se puede modificar esta Categoría.</string>
+    <string name="cant_delete_categoryinuse">No se puede borrar esta Categoría pues está en uso.</string>
+    <string name="cant_delete_cateroryinuse_food">\"No se puede borrar esta Categoría porque está en uso en \"</string>
+    <string name="foods">\" Alimento/s.\"</string>
+    <string name="cant_delete_brand">No se puede modificar esta Marca.</string>
+    <string name="cant_delete_brandinuse">No se puede borrar esta Marca pues está en uso.</string>
+    <string name="cant_delete_brandinusefood">\"No se puede borrar esta Marca porque está en uso en \"</string>
+    <string name="cant_modifiy_unit">No se puede modificar esta Medida.</string>
+    <string name="cant_delete_unitinuse">No se puede borrar esta Medida pues está en uso.</string>
+    <string name="cant_delete_unitinusefood">\"No se puede borrar esta Medida porque está en uso en \"</string>
+    <string name="must_enter_title">Debe ingresar un Título.</string>
+    <string name="must_write_note">Debe escribir la Nota.</string>
+    <string name="plate_data">Datos Totales de la Comida</string>
+    <string name="total_carbs_gr">Carbohidratos (gr): </string>
+    <string name="total_carbs">Carbohidratos: </string>
+    <string name="total_insulin">Insulina: </string>
+    <string name="food_general_data">Datos del Alimento</string>
+    <string name="grams">Gramos</string>
+    <string name="quantity_in">Cantidad en:</string>
+    <string name="quantity_of">Cantidad de</string>
+    <string name="enter_quantity"><font size="15">Ingrese la Cantidad</font></string>
+    <string name="select_one_food"><font size="15">Seleccione un Alimento</font></string>
+    <string name="must_enter_food">Debe seleccionar un Alimento.</string>
+    <string name="must_enter_quantity">Debe indicar la cantidad a consumir.</string>
+    <string name="carbs_data">Conteo:</string>
+    <string name="meal_data">Comida:</string>
+    <string name="reference">Referencia:</string>
+    <string name="add_food">Agregar Alimento</string>
+    <string name="quantity_total">Catidad Total:</string>
+    <string name="no_carbs">No Aporta Carbohidratos</string>
+    <string name="ratio">Ratio</string>
+    <string name="ok">Ok</string>
+    <string name="jhg">hola</string>
+    <string name="ratio_msg">Indique el <b>Ratio</b> a Utilizar en los cálculos. \nEl Ratio indica la cantidad de CarboHidratos por 1 Unidad de Insulina.\n(Por Ejemplo, un Ratio 20 indica que se utiliza 1U cada 20grCH)</string>
+    <string name="data_new_food">Datos del Alimento</string>
+    <string name="enter_food"><font size="15">Seleccione un Alimento</font></string>
+    <string name="food_plate">Alimentos Seleccionados</string>
+    <string name="dama_amount_new_food">Datos de la cantidad</string>
+    <string name="total_grams_carbs">Carbohidratos total (gr):</string>
+    <string name="from_table">De Tabla</string>
+    <string name="personal">Personal</string>
+    <string name="grams2">Gramos: </string>
+</resources>

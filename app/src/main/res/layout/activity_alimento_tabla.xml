@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlimentoTablaActivity"
+    android:background="@drawable/borde_color1_fondo_oscuro"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/LinearLayoutNombrePantalla"
+        android:background="@drawable/borde_color1_fino">
+
+        <TextView
+            style="@style/TextViewNombrePantalla"
+            android:textColor="@color/color1_oscuro"
+            android:text="@string/food_data"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight=".16"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            app:srcCompat="@drawable/tabla_ic_sf" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/LinearLayoutSeccion"
+                    android:background="@drawable/borde_color1_fino">
+
+                    <TextView
+                        style="@style/TextViewTitulo"
+                        android:textColor="@color/color1_claro"
+                        android:background="@drawable/borde_color1_pleno"
+                        android:text="@string/general_data" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color1_oscuro"
+                            android:text="@string/name"/>
+
+                        <TextView
+                            style="@style/EditTextIngresoDatos"
+                            android:id="@+id/nombreATTV" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color1_oscuro"
+                            android:text="@string/category"/>
+
+                        <TextView
+                            style="@style/EditTextIngresoDatos"
+                            android:id="@+id/categoriaATTV" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LinearLayoutSeccion"
+                    android:background="@drawable/borde_color1_fino">
+
+                    <TextView
+                        style="@style/TextViewTitulo"
+                        android:text="@string/portion_data"
+                        android:background="@drawable/borde_color1_pleno"
+                        android:textColor="@color/color1_claro" />
+
+                    <CheckBox
+                        style="@style/EditTextIngresoDatos"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:enabled="false"
+                        android:text="@string/no_carbs"
+                        android:id="@+id/NoContabilizaCB"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal"
+                        android:id="@+id/porcionUniATLL">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color1_oscuro"
+                            android:text="@string/unit"/>
+
+                        <TextView
+                            style="@style/EditTextIngresoDatos"
+                            android:id="@+id/porcionUniATTV" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal"
+                        android:id="@+id/porcionCantATLL">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color1_oscuro"
+                            android:text="@string/quantity"/>
+
+                        <TextView
+                            style="@style/EditTextIngresoDatos"
+                            android:id="@+id/porcionCantATTV" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal"
+                        android:id="@+id/porcionGrATLL">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color1_oscuro"
+                            android:text="@string/equiv_grams_optional"/>
+
+                        <TextView
+                            style="@style/EditTextIngresoDatos"
+                            android:id="@+id/porcionGrATTV" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal"
+                        android:id="@+id/carboATLL">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color1_oscuro"
+                            android:text="@string/equiv_grams_carbs"/>
+
+                        <TextView
+                            style="@style/EditTextIngresoDatos"
+                            android:id="@+id/carboATTV" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/FABIzquierda"
+            android:id="@+id/cancelFAB"
+            android:onClick="clickVolverAlimento"
+            app:backgroundTint="@color/color1" />
+
+    </RelativeLayout>
+
+</LinearLayout>

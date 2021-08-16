@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MarcaActivity"
+    android:background="@drawable/borde_color3_fondo_oscuro"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/LinearLayoutNombrePantalla"
+        android:background="@drawable/borde_color3_fino">
+
+        <TextView
+            style="@style/TextViewNombrePantalla"
+            android:textColor="@color/color3_oscuro"
+            android:text="@string/brand2"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight=".14"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            app:srcCompat="@drawable/marca_ic_sf" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/LinearLayoutSeccion"
+                    android:background="@drawable/borde_color3_fino">
+
+                    <TextView
+                        style="@style/TextViewTitulo"
+                        android:textColor="@color/color3_claro"
+                        android:background="@drawable/borde_color3_pleno"
+                        android:text="@string/general_data" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color3_oscuro"
+                            android:text="@string/name"/>
+
+                        <EditText
+                            style="@style/EditTextIngresoDatos"
+                            android:hint="@string/enter_food_name"
+                            android:textColorHint="@color/color3"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:imeOptions="actionNext"
+                            android:inputType="textPersonName|textCapSentences"
+                            android:id="@+id/nombreET" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextViewIngresoDatos"
+                            android:textColor="@color/color3_oscuro"
+                            android:text="@string/description"/>
+
+                        <EditText
+                            style="@style/EditTextIngresoDatos"
+                            android:hint="@string/enter_description"
+                            android:textColorHint="@color/color3"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:singleLine="false"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPersonName|textCapSentences|textMultiLine"
+                            android:lines="8"
+                            android:minLines="6"
+                            android:gravity="top|left"
+                            android:maxLines="10"
+                            android:scrollbars="vertical"
+                            android:id="@+id/descripcionET" />
+                        </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/FABDerecha"
+            android:id="@+id/guardarFAB"
+            android:onClick="clickFABGuardar"
+            app:backgroundTint="@color/color3"
+            android:src="@drawable/ic_ok"/>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/FABCentro"
+            android:id="@+id/deleteFAB"
+            android:onClick="clickFABBorrar"
+            app:backgroundTint="@color/color3" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/FABIzquierda"
+            android:id="@+id/cancelFAB"
+            android:onClick="clickFABCancelar"
+            app:backgroundTint="@color/color3" />
+
+    </RelativeLayout>
+
+</LinearLayout>

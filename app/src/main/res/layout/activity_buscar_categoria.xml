@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BuscarCategoriaActivity"
+    android:background="@drawable/borde_color2_fondo_oscuro"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/LinearLayoutNombrePantalla"
+        android:background="@drawable/borde_color2_fino">
+
+        <TextView
+            style="@style/TextViewNombrePantalla"
+            android:textColor="@color/color2_oscuro"
+            android:text="@string/search_category" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight=".14"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            app:srcCompat="@drawable/categoria_ic_sf" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/LinearLayoutSeccion"
+                android:background="@drawable/borde_color2_fino">
+
+                <TextView
+                    style="@style/TextViewTitulo"
+                    android:textColor="@color/color2_claro"
+                    android:background="@drawable/borde_color2_pleno"
+                    android:text="@string/search_criterial" />
+
+
+                <EditText
+                    style="@style/EditTextIngresoDatos"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:hint="@string/enter_name"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textColorHint="@color/color2"
+                    android:imeOptions="actionDone"
+                    android:selectAllOnFocus="true"
+                    android:maxLines="1"
+                    android:digits="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
+                    android:id="@+id/nombreET" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/estiloBotonPequeño"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:background="@drawable/borde_color2_fino"
+                        android:layout_marginRight="10dp"
+                        android:onClick="clickLimpiar"
+                        android:text="@string/clean"
+                        android:textColor="@color/color2_oscuro"
+                        android:id="@+id/limpiarBT"/>
+
+                    <TextView
+                        style="@style/estiloBotonPequeño"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:background="@drawable/borde_color2_fino"
+                        android:onClick="clickBuscarCategorias"
+                        android:text="@string/search"
+                        android:textColor="@color/color2_oscuro"
+                        android:id="@+id/buscarBT"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/borde_color2_fino"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:orientation="horizontal">
+
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:orientation="horizontal"
+                            android:id="@+id/mostrarRG">
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:textStyle="italic"
+                                android:textSize="12dp"
+                                android:scaleX="0.75"
+                                android:scaleY="0.75"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:text="@string/hide"
+                                android:tag="0"
+                                android:onClick="clickMostrarCriterio"
+                                android:id="@+id/ocultarRB"/>
+
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:textStyle="italic"
+                                android:textSize="12dp"
+                                android:scaleX="0.75"
+                                android:scaleY="0.75"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:text="@string/show"
+                                android:checked="true"
+                                android:tag="1"
+                                android:onClick="clickMostrarCriterio"
+                                android:id="@+id/mostrarRB"/>
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:background="@drawable/borde_color2_fino">
+
+                <ListView
+                    style="@style/ListViewGeneral"
+                    android:id="@+id/categoriasListaLV"
+                    android:divider="@color/color2_oscuro"/>
+
+                <TextView
+                    style="@style/TextViewIngresoDatos"
+                    android:padding="10dp"
+                    android:layout_marginBottom="200dp"
+                    android:id="@+id/view_vacio"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/FABDerecha"
+            android:id="@+id/fabAdd"
+            android:src="@drawable/ic_add"
+            app:backgroundTint="@color/color2" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="@style/FABIzquierda"
+            android:id="@+id/cancelFAB"
+            android:onClick="clickVolver"
+            app:backgroundTint="@color/color2"  />
+
+    </RelativeLayout>
+</LinearLayout>
