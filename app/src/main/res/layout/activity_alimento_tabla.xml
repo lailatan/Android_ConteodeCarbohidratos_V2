@@ -109,8 +109,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
                         android:orientation="horizontal"
+                        android:layout_margin="10dp"
                         android:id="@+id/porcionUniATLL">
 
                         <TextView
@@ -127,53 +127,57 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
                         android:orientation="horizontal"
-                        android:id="@+id/porcionCantATLL">
-
-                        <TextView
-                            style="@style/TextViewIngresoDatos"
-                            android:textColor="@color/color1_oscuro"
-                            android:text="@string/quantity"/>
-
-                        <TextView
-                            style="@style/EditTextIngresoDatos"
-                            android:id="@+id/porcionCantATTV" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:orientation="horizontal"
-                        android:id="@+id/porcionGrATLL">
-
-                        <TextView
-                            style="@style/TextViewIngresoDatos"
-                            android:textColor="@color/color1_oscuro"
-                            android:text="@string/equiv_grams_optional"/>
-
-                        <TextView
-                            style="@style/EditTextIngresoDatos"
-                            android:id="@+id/porcionGrATTV" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="horizontal"
-                        android:id="@+id/carboATLL">
-
-                        <TextView
-                            style="@style/TextViewIngresoDatos"
-                            android:textColor="@color/color1_oscuro"
-                            android:text="@string/equiv_grams_carbs"/>
-
-                        <TextView
-                            style="@style/EditTextIngresoDatos"
-                            android:id="@+id/carboATTV" />
-
+                        android:id="@+id/porcionATLL">
+                        <TableLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:weightSum="6">
+                            <TableRow>
+                                <TextView
+                                    style="@style/TablaRowTitulo"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".25"
+                                    android:textColor="@color/color1_oscuro"
+                                    android:text="@string/quantity"/>
+                                <TextView
+                                    style="@style/TablaRowTitulo"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".4"
+                                    android:textColor="@color/color1_oscuro"
+                                    android:text="@string/equiv_grams_optional"/>
+                                <TextView
+                                    style="@style/TablaRowTitulo"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".35"
+                                    android:textColor="@color/color1_oscuro"
+                                    android:text="@string/equiv_grams_carbs"/>
+                            </TableRow>
+                            <TableRow>
+                                <EditText
+                                    style="@style/TablaRowIngresoDato"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".25"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="number"
+                                    android:id="@+id/porcionCantATTV" />
+                                <EditText
+                                    style="@style/TablaRowIngresoDato"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".4"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="number"
+                                    android:id="@+id/porcionGrATTV" />
+                                <EditText
+                                    style="@style/TablaRowIngresoDato"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".35"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="number"
+                                    android:id="@+id/carboATTV" />
+                            </TableRow>
+                        </TableLayout>
                     </LinearLayout>
                 </LinearLayout>
 

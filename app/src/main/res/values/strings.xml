@@ -10,7 +10,7 @@
     <string name="enter_food_category"><i><font size="15">Seleccione una categoría</font></i></string>
     <string name="food_type">Tipo de Alimento</string>
     <string name="enter_food_type"><i><font size="15">Seleccione tipo</font></i></string>
-    <string name="make_a_plate">Armar una Comida</string>
+    <string name="make_a_plate">Calcular</string>
     <string name="search_alimento">Buscar</string>
     <string name="new_alimento">Nuevo</string>
     <string name="save">Guardar</string>
@@ -18,14 +18,14 @@
     <string name="cancel">Cancelar</string>
     <string name="personalfood">Alimentos Personales</string>
     <string name="generalfood">Tabla de Alimentos</string>
-    <string name="category">Categoría: </string>
-    <string name="brand"><u>Marca: </u></string>
+    <string name="category">Categoría </string>
+    <string name="brand"><u>Marca </u></string>
     <string name="search">Buscar</string>
     <string name="select_one_category"><i><font size="15">Selecciones una Categoría</font></i></string>
-    <string name="portion">Porción: </string>
-    <string name="carbs_gr">Gr. de Carbohidratos: </string>
+    <string name="portion">Porción </string>
+    <string name="carbs_gr">Gr. de Carbohidratos </string>
     <string name="notes">Notas / Tips</string>
-    <string name="admin">Mantenimiento</string>
+    <string name="admin">Configuración</string>
     <string name="back_food">Volver</string>
     <string name="clean">Limpiar</string>
     <string name="not_found">No se encontraron Alimentos con esos criterios de búsqueda.</string>
@@ -35,12 +35,12 @@
     <string name="enter_food_delay"><i><font size="15">Ingrese Tiempo de Espera para ingesta</font></i></string>
     <string name="enter_food_ingredients"><i><font size="15">Ingrese los Ingredientes Principales</font></i></string>
     <string name="enter_food_comments"><i><font size="15">Ingrese Comentarios a tener en cuenta</font></i></string>
-    <string name="for_celiac">Apto Celíacos:</string>
+    <string name="for_celiac">Apto Celíacos</string>
     <string name="no">No</string>
     <string name="si">Si</string>
     <string name="dont_know">NS/NE</string>
     <string name="yes">Si</string>
-    <string name="fast_absorption">Absorción rápída:</string>
+    <string name="fast_absorption">Absorción rápída</string>
     <string name="delete_confirmation">¿Desea eliminar este Alimento?</string>
     <string name="delete_brand_confirmation">¿Desea eliminar esta Marca?</string>
     <string name="delete_category_confirmation">¿Desea eliminar esta Categoria?</string>
@@ -51,7 +51,7 @@
     <string name="enter_food_portion_grams"><i><font size="15">Ingrese los Gramos</font></i></string>
     <string name="select_one_unit"><i><font size="15">Seleccione una Medida</font></i></string>
     <string name="estimate">Apróx. </string>
-    <string name="name"><u>Nombre: </u></string>
+    <string name="name"><u>Nombre </u></string>
     <string name="food_data">Datos del Alimento</string>
     <string name="search_notes">Buscar Notas</string>
     <string name="enter_note_title"><i><font size="15">Ingrese el título</font></i></string>
@@ -64,21 +64,21 @@
     <string name="search_brand">Buscar Marca</string>
     <string name="search_unit">Buscar Medida</string>
     <string name="search_category">Buscar Categoría</string>
-    <string name="unit"><u>Medida: </u></string>
-    <string name="quantity"><u>Cantidad: </u></string>
-    <string name="equiv_grams_optional">Gramos Equivalentes: </string>
-    <string name="equiv_grams_carbs"><u>Carbohidratos (gr): </u></string>
-    <string name="general_data">Datos Generales:</string>
-    <string name="portion_data">Datos de la Porción:</string>
-    <string name="aditional_data">Datos Adicionales:</string>
-    <string name="waiting_time">Tiempo de Espera (min): </string>
-    <string name="ingredients">Ingredientes:</string>
-    <string name="comments">Comentarios:</string>
-    <string name="search_criterial">Criterios de Búsqueda:</string>
-    <string name="outcome">Resultado:</string>
-    <string name="description">"Descripción: "</string>
+    <string name="unit"><u>Medida Referencia</u></string>
+    <string name="quantity"><u>Cantidad\nMedidas</u></string>
+    <string name="equiv_grams_optional">Gramos (ó Cc.)\nEquivalentes</string>
+    <string name="equiv_grams_carbs"><u>Gramos\nCarbohidratos</u></string>
+    <string name="general_data">Datos Generales</string>
+    <string name="portion_data">Porción de Referencia</string>
+    <string name="aditional_data">Datos Adicionales</string>
+    <string name="waiting_time">Tiempo de Espera Ingesta (min) </string>
+    <string name="ingredients">Ingredientes</string>
+    <string name="comments">Comentarios</string>
+    <string name="search_criterial">Criterios de Búsqueda</string>
+    <string name="outcome">Resultado</string>
+    <string name="description">"Descripción "</string>
     <string name="enter_description"><i><font size="15">Ingrese la descripción</font></i></string>
-    <string name="date_last_update">Últ. Fecha:</string>
+    <string name="date_last_update">Últ. Fecha</string>
     <string name="category2">Categoría</string>
     <string name="brand2">Marca</string>
     <string name="unit2">Medida</string>
@@ -122,17 +122,17 @@
     <string name="total_insulin">Insulina: </string>
     <string name="food_general_data">Datos del Alimento</string>
     <string name="grams">Gramos</string>
-    <string name="quantity_in">Cantidad en:</string>
+    <string name="quantity_in">Cantidad en</string>
     <string name="quantity_of">Cantidad de</string>
     <string name="enter_quantity"><font size="15">Ingrese la Cantidad</font></string>
     <string name="select_one_food"><font size="15">Seleccione un Alimento</font></string>
     <string name="must_enter_food">Debe seleccionar un Alimento.</string>
     <string name="must_enter_quantity">Debe indicar la cantidad a consumir.</string>
-    <string name="carbs_data">Conteo:</string>
-    <string name="meal_data">Comida:</string>
-    <string name="reference">Referencia:</string>
+    <string name="carbs_data">Conteo</string>
+    <string name="meal_data">Comida</string>
+    <string name="reference">Referencia</string>
     <string name="add_food">Agregar Alimento</string>
-    <string name="quantity_total">Catidad Total:</string>
+    <string name="quantity_total">Catidad a Ingerir</string>
     <string name="no_carbs">No Aporta Carbohidratos</string>
     <string name="ratio">Ratio</string>
     <string name="ok">Ok</string>
@@ -141,9 +141,11 @@
     <string name="data_new_food">Datos del Alimento</string>
     <string name="enter_food"><font size="15">Seleccione un Alimento</font></string>
     <string name="food_plate">Alimentos Seleccionados</string>
-    <string name="dama_amount_new_food">Datos de la cantidad</string>
-    <string name="total_grams_carbs">Carbohidratos total (gr):</string>
+    <string name="dama_amount_new_food">Datos de la Cantidad</string>
+    <string name="total_grams_carbs">Carbohidratos Total (gr):</string>
     <string name="from_table">De Tabla</string>
     <string name="personal">Personal</string>
-    <string name="grams2">Gramos: </string>
+    <string name="grams2">Gramos </string>
+    <string name="calc_carbohydrates">Cálculo de Carbohidratos</string>
+    <string name="admin_extra_data">Configurar datos</string>
 </resources>

@@ -178,70 +178,55 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
+                            android:layout_margin="5dp"
                             android:orientation="horizontal"
                             android:id="@+id/fragPorcionCantLL">
 
-                            <TextView
-                                android:layout_width="wrap_content"
+                            <TableLayout
                                 android:layout_height="wrap_content"
-                                android:textStyle="bold|italic"
-                                android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:text="@string/quantity"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:id="@+id/fragPorcionCantTV" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textStyle="bold|italic"
-                                android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:text="  =  "/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textStyle="bold|italic"
-                                android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:text="@string/grams2"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:id="@+id/fragPorcionGrTV" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:orientation="horizontal"
-                            android:id="@+id/fragCarboLL">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textStyle="bold|italic"
-                                android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:text="@string/equiv_grams_carbs"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:id="@+id/fragCarboTV" />
-
+                                android:layout_width="match_parent"
+                                android:weightSum="6">
+                                <TableRow>
+                                    <TextView
+                                        style="@style/TablaRowTitulo"
+                                        android:layout_width="0dp"
+                                        android:layout_weight=".25"
+                                        android:textColor="@color/colorPrimaryDark_enabled"
+                                        android:text="@string/quantity"/>
+                                    <TextView
+                                        style="@style/TablaRowTitulo"
+                                        android:layout_width="0dp"
+                                        android:layout_weight=".4"
+                                        android:textColor="@color/colorPrimaryDark_enabled"
+                                        android:text="@string/equiv_grams_optional"/>
+                                    <TextView
+                                        style="@style/TablaRowTitulo"
+                                        android:layout_width="0dp"
+                                        android:layout_weight=".35"
+                                        android:textColor="@color/colorPrimaryDark_enabled"
+                                        android:text="@string/equiv_grams_carbs"/>
+                                </TableRow>
+                                <TableRow>
+                                    <EditText
+                                        style="@style/TablaRowIngresoDato"
+                                        android:layout_width="0dp"
+                                        android:layout_weight=".25"
+                                        android:textColor="@color/colorPrimaryDark_enabled"
+                                        android:id="@+id/fragPorcionCantTV" />
+                                    <EditText
+                                        style="@style/TablaRowIngresoDato"
+                                        android:layout_width="0dp"
+                                        android:layout_weight=".4"
+                                        android:textColor="@color/colorPrimaryDark_enabled"
+                                        android:id="@+id/fragPorcionGrTV" />
+                                    <EditText
+                                        style="@style/TablaRowIngresoDato"
+                                        android:layout_width="0dp"
+                                        android:layout_weight=".35"
+                                        android:textColor="@color/colorPrimaryDark_enabled"
+                                        android:id="@+id/fragCarboTV" />
+                                </TableRow>
+                            </TableLayout>
                         </LinearLayout>
 
                         <LinearLayout
@@ -460,37 +445,6 @@
                                 android:id="@+id/fragCantidadET" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginTop="10dp"
-                            android:gravity="center"
-                            android:background="@drawable/borde_color3_fino"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textStyle="bold|italic"
-                                android:layout_margin="5dp"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                                android:textColor="@color/color3_oscuro"
-                                android:text="@string/total_grams_carbs"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="5dp"
-                                android:textStyle="bold"
-                                android:gravity="center"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                                android:textColor="@color/colorPrimaryDark"
-                                android:id="@+id/fragCarboEquivalentesTV" />
-
-                        </LinearLayout>
-
                     </LinearLayout>
                 </LinearLayout>
 
@@ -498,6 +452,36 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:background="@drawable/borde_color3_fino"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold|italic"
+                            android:layout_margin="5dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:textColor="@color/color3_oscuro"
+                            android:text="@string/total_grams_carbs"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:textColor="@color/active"
+                            android:id="@+id/fragCarboEquivalentesTV" />
+
+                    </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>

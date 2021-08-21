@@ -168,13 +168,11 @@
                         android:text="@string/portion_data" />
 
                     <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/TextViewIngresoDatos"
                         android:text="@string/no_carbs"
                         android:onClick="clickNoAportaCarbs"
                         android:textColor="@color/colorPrimaryDark"
                         android:id="@+id/NoContabilizaCB"/>
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -216,28 +214,6 @@
                             android:id="@+id/buscarUnidadBT" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:orientation="horizontal"
-                        android:id="@+id/entradaPorcionCantLL">
-
-                        <TextView
-                            style="@style/TextViewIngresoDatos"
-                            android:textColor="@color/color2_oscuro"
-                            android:text="@string/quantity"/>
-
-                        <EditText
-                            style="@style/EditTextIngresoDatos"
-                            android:hint="@string/enter_food_portionquantity"
-                            android:textColorHint="@color/color2"
-                            android:textColor="@color/colorPrimaryDark"
-                            android:imeOptions="actionNext"
-                            android:inputType="number"
-                            android:id="@+id/entradaPorcionCantET" />
-                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -245,45 +221,59 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:orientation="horizontal"
-                        android:id="@+id/entradaPorcionGrLL">
+                        android:id="@+id/entradaPorcionLL">
 
-                        <TextView
-                            style="@style/TextViewIngresoDatos"
-                            android:textColor="@color/color2_oscuro"
-                            android:text="@string/equiv_grams_optional"/>
+                        <TableLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:weightSum="6">
+                            <TableRow>
+                                <TextView
+                                    style="@style/TablaRowTitulo"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".25"
+                                    android:textColor="@color/color2_oscuro"
+                                    android:text="@string/quantity"/>
+                                <TextView
+                                    style="@style/TablaRowTitulo"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".4"
+                                    android:textColor="@color/color2_oscuro"
+                                    android:text="@string/equiv_grams_optional"/>
+                                <TextView
+                                    style="@style/TablaRowTitulo"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".35"
+                                    android:textColor="@color/color2_oscuro"
+                                    android:text="@string/equiv_grams_carbs"/>
+                            </TableRow>
+                            <TableRow>
+                                <EditText
+                                    style="@style/TablaRowIngresoDato"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".25"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="number"
+                                    android:id="@+id/entradaPorcionCantET" />
+                                <EditText
+                                    style="@style/TablaRowIngresoDato"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".4"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="number"
+                                    android:id="@+id/entradaPorcionGrET" />
+                                <EditText
+                                    style="@style/TablaRowIngresoDato"
+                                    android:layout_width="0dp"
+                                    android:layout_weight=".35"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="number"
+                                    android:id="@+id/entradaCarboET" />
+                            </TableRow>
+                        </TableLayout>
 
-                        <EditText
-                            style="@style/EditTextIngresoDatos"
-                            android:hint="@string/enter_food_portion_grams"
-                            android:textColorHint="@color/color2"
-                            android:textColor="@color/colorPrimaryDark"
-                            android:imeOptions="actionNext"
-                            android:inputType="number"
-                            android:id="@+id/entradaPorcionGrET" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:orientation="horizontal"
-                        android:id="@+id/entradaCarboLL">
-
-                        <TextView
-                            style="@style/TextViewIngresoDatos"
-                            android:textColor="@color/color2_oscuro"
-                            android:text="@string/equiv_grams_carbs"/>
-
-                        <EditText
-                            style="@style/EditTextIngresoDatos"
-                            android:hint="@string/enter_food_carbs"
-                            android:textColorHint="@color/color2"
-                            android:textColor="@color/colorPrimaryDark"
-                            android:imeOptions="actionNext"
-                            android:inputType="numberDecimal"
-                            android:id="@+id/entradaCarboET" />
-                    </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -299,7 +289,6 @@
 
                         <EditText
                             style="@style/EditTextIngresoDatos"
-                            android:hint="@string/enter_food_delay"
                             android:textColorHint="@color/color2"
                             android:textColor="@color/colorPrimaryDark"
                             android:imeOptions="actionDone"
@@ -343,7 +332,7 @@
                             <RadioButton
                                 style="@style/EditTextIngresoDatos"
                                 android:layout_width="0dp"
-                                android:layout_weight=".20"
+                                android:layout_weight=".15"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:text="@string/no"
@@ -353,7 +342,7 @@
                             <RadioButton
                                 style="@style/EditTextIngresoDatos"
                                 android:layout_width="0dp"
-                                android:layout_weight=".2"
+                                android:layout_weight=".15"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:text="@string/yes"
@@ -362,7 +351,7 @@
                             <RadioButton
                                 style="@style/EditTextIngresoDatos"
                                 android:layout_width="0dp"
-                                android:layout_weight=".25"
+                                android:layout_weight=".35"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:checked="true"
@@ -396,7 +385,7 @@
                             <RadioButton
                                 style="@style/EditTextIngresoDatos"
                                 android:layout_width="0dp"
-                                android:layout_weight=".2"
+                                android:layout_weight=".15"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:text="@string/no"
@@ -405,7 +394,7 @@
                             <RadioButton
                                 style="@style/EditTextIngresoDatos"
                                 android:layout_width="0dp"
-                                android:layout_weight=".2"
+                                android:layout_weight=".15"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:text="@string/yes"
@@ -414,7 +403,7 @@
                             <RadioButton
                                 style="@style/EditTextIngresoDatos"
                                 android:layout_width="0dp"
-                                android:layout_weight=".25"
+                                android:layout_weight=".35"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:checked="true"

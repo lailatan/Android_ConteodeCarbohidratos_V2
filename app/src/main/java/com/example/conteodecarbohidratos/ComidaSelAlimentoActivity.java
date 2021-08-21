@@ -145,7 +145,7 @@ public class ComidaSelAlimentoActivity extends AppCompatActivity {
         //TextView fragPorcionUniLBL=findViewById(R.id.fragPorcionUniLBL);
         LinearLayout fragPorcionCantLL=findViewById(R.id.fragPorcionCantLL);
         //LinearLayout fragPorcionGrLL=findViewById(R.id.fragPorcionGrLL);
-        LinearLayout fragCarboLL=findViewById(R.id.fragCarboLL);
+        //LinearLayout fragCarboLL=findViewById(R.id.fragCarboLL);
         LinearLayout fragTiempoEsperaLL=findViewById(R.id.fragTiempoEsperaLL);
 
         LinearLayout fragUnidoGrLL =findViewById(R.id.fragUnidoGrLL);
@@ -194,7 +194,6 @@ public class ComidaSelAlimentoActivity extends AppCompatActivity {
                     //fragPorcionUniLBL.setVisibility(View.VISIBLE);
                     fragPorcionCantLL.setVisibility(View.VISIBLE);
                     //fragPorcionGrLL.setVisibility(View.VISIBLE);
-                    fragCarboLL.setVisibility(View.VISIBLE);
                     fragTiempoEsperaLL.setVisibility(View.VISIBLE);
 
                     fragUnidoGrLL.setVisibility(View.VISIBLE);
@@ -255,7 +254,6 @@ public class ComidaSelAlimentoActivity extends AppCompatActivity {
                     //fragPorcionUniLBL.setVisibility(View.GONE);
                     fragPorcionCantLL.setVisibility(View.GONE);
                     //fragPorcionGrLL.setVisibility(View.GONE);
-                    fragCarboLL.setVisibility(View.GONE);
                     fragTiempoEsperaLL.setVisibility(View.GONE);
 
                     fragUnidoGrLL.setVisibility(View.GONE);

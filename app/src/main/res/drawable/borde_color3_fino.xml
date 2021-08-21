@@ -11,7 +11,7 @@
 
     <!-- Color y ancho del borde del elemento -->
     <stroke
-        android:width="2dp"
+        android:width="4dp"
         android:color="@color/color3" >
         <!--android:color="@color/borde_pantalla_principal" > -->
     </stroke>

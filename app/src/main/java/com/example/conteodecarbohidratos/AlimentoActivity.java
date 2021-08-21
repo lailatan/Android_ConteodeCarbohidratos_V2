@@ -53,9 +53,7 @@ public class AlimentoActivity extends AppCompatActivity {
     TextView buscarUnidadBT;
     CheckBox NoContabilizaCB;
     LinearLayout entradaPorcionUniLL;
-    LinearLayout entradaPorcionCantLL;
-    LinearLayout entradaPorcionGrLL;
-    LinearLayout entradaCarboLL;
+    LinearLayout entradaPorcionLL;
     LinearLayout entradaTiempoLL;
 
     @Override
@@ -80,9 +78,7 @@ public class AlimentoActivity extends AppCompatActivity {
         buscarUnidadBT =  findViewById(R.id.buscarUnidadBT);
         NoContabilizaCB =  findViewById(R.id.NoContabilizaCB);
         entradaPorcionUniLL=  findViewById(R.id.entradaPorcionUniLL);
-        entradaPorcionCantLL=  findViewById(R.id.entradaPorcionCantLL);
-        entradaPorcionGrLL=  findViewById(R.id.entradaPorcionGrLL);
-        entradaCarboLL=  findViewById(R.id.entradaCarboLL);
+        entradaPorcionLL=  findViewById(R.id.entradaPorcionLL);
         entradaTiempoLL=  findViewById(R.id.entradaTiempoLL);
 
 
@@ -196,9 +192,7 @@ public class AlimentoActivity extends AppCompatActivity {
             entradaTiempoET.setText("");
 
             entradaPorcionUniLL.setVisibility(View.GONE);
-            entradaPorcionCantLL.setVisibility(View.GONE);
-            entradaPorcionGrLL.setVisibility(View.GONE);
-            entradaCarboLL.setVisibility(View.GONE);
+            entradaPorcionLL.setVisibility(View.GONE);
             entradaTiempoLL.setVisibility(View.GONE);
 
         }
@@ -468,26 +462,22 @@ public class AlimentoActivity extends AppCompatActivity {
 
         if (carbsNoCuenta) {
             entradaPorcionUniLL.setVisibility(View.GONE);
-            entradaPorcionCantLL.setVisibility(View.GONE);
-            entradaPorcionGrLL.setVisibility(View.GONE);
-            entradaCarboLL.setVisibility(View.GONE);
+            entradaPorcionLL.setVisibility(View.GONE);
             entradaTiempoLL.setVisibility(View.GONE);
-            entradaPorcionCantET.setHint(null);
-            entradaPorcionGrET.setHint(null);
-            entradaCarboET.setHint(null);
-            entradaPorcionUniET.setHint(null);
-            entradaTiempoET.setHint(null);
+            //entradaPorcionCantET.setHint(null);
+            //entradaPorcionGrET.setHint(null);
+            //entradaCarboET.setHint(null);
+            //entradaPorcionUniET.setHint(null);
+            //entradaTiempoET.setHint(null);
         }else {
             entradaPorcionUniLL.setVisibility(View.VISIBLE);
-            entradaPorcionCantLL.setVisibility(View.VISIBLE);
-            entradaPorcionGrLL.setVisibility(View.VISIBLE);
-            entradaCarboLL.setVisibility(View.VISIBLE);
+            entradaPorcionLL.setVisibility(View.VISIBLE);
             entradaTiempoLL.setVisibility(View.VISIBLE);
-            entradaPorcionCantET.setHint(R.string.enter_food_portionquantity);
-            entradaPorcionGrET.setHint(R.string.enter_food_portion_grams);
-            entradaCarboET.setHint(R.string.enter_food_carbs);
-            entradaPorcionUniET.setHint(R.string.enter_food_unit);
-            entradaTiempoET.setHint(R.string.enter_food_delay);
+            //entradaPorcionCantET.setHint(R.string.enter_food_portionquantity);
+            //entradaPorcionGrET.setHint(R.string.enter_food_portion_grams);
+            //entradaCarboET.setHint(R.string.enter_food_carbs);
+            //entradaPorcionUniET.setHint(R.string.enter_food_unit);
+            //entradaTiempoET.setHint(R.string.enter_food_delay);
         }
 
     }

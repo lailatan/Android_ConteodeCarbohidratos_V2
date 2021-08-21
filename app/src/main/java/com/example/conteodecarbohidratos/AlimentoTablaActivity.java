@@ -32,9 +32,7 @@ public class AlimentoTablaActivity extends AppCompatActivity {
     Integer alimentoID;
     CheckBox NoContabilizaCB;
     LinearLayout porcionUniATLL;
-    LinearLayout porcionCantATLL;
-    LinearLayout porcionGrATLL;
-    LinearLayout carboATLL;
+    LinearLayout porcionATLL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +46,7 @@ public class AlimentoTablaActivity extends AppCompatActivity {
         carboATTV = findViewById(R.id.carboATTV);
         NoContabilizaCB = findViewById(R.id.NoContabilizaCB);
         porcionUniATLL= findViewById(R.id.porcionUniATLL);
-        porcionCantATLL= findViewById(R.id.porcionCantATLL);
-        porcionGrATLL= findViewById(R.id.porcionGrATLL);
-        carboATLL= findViewById(R.id.carboATLL);
+        porcionATLL= findViewById(R.id.porcionATLL);
 
         Bundle datos = this.getIntent().getExtras();
         alimentoID = datos.getInt(C_ALIMENTOID);
@@ -78,17 +74,17 @@ public class AlimentoTablaActivity extends AppCompatActivity {
             porcionUniATTV.setText(porcionUni);
             porcionCantATTV.setText(porcionCant.toString());
             if (!(porcionGr == 0)) {
-                porcionGrATTV.setText("( " + getString(R.string.estimate) + " " + porcionGr.toString() + " gr/cc )");
+                //porcionGrATTV.setText("( " + getString(R.string.estimate) + " " + porcionGr.toString() + " gr/cc )");
+                porcionGrATTV.setText(porcionGr.toString());
             } else {
                 porcionGrATTV.setText("");
             }
-            carboATTV.setText(getString(R.string.estimate) + " " + carbo.toString() + " gr.CH.");
+            //carboATTV.setText(getString(R.string.estimate) + " " + carbo.toString() + " gr.CH.");
+            carboATTV.setText(carbo.toString());
         } else {
             NoContabilizaCB.setChecked(true);
             porcionUniATLL.setVisibility(View.GONE);
-            porcionCantATLL.setVisibility(View.GONE);
-            porcionGrATLL.setVisibility(View.GONE);
-            carboATLL.setVisibility(View.GONE);
+            porcionATLL.setVisibility(View.GONE);
 
         }
 

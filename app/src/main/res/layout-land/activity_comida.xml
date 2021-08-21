@@ -5,31 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ComidaActivity"
-    android:background="@drawable/borde_color3_fino"
+    android:background="@drawable/borde_color3_fondo_oscuro"
     android:layout_margin="5dp"
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        style="@style/LinearLayoutNombrePantalla"
+        android:background="@drawable/borde_color3_fino">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight=".8"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="30dp"
+            style="@style/TextViewNombrePantalla"
             android:textColor="@color/color3_oscuro"
             android:text="@string/make_a_plate"
             />
 
         <ImageView
             android:layout_width="0dp"
-            android:layout_weight=".2"
+            android:layout_weight=".14"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             app:srcCompat="@drawable/comida_ic_sf" />
@@ -37,82 +29,44 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="5dp"
-        android:paddingBottom="5dp"
+        style="@style/LinearLayoutSeccion"
         android:background="@drawable/borde_color3_fino">
 
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimaryDark"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:layout_margin="5dp"
-            android:background="@drawable/borde_color3_fino"
+            style="@style/TextViewTitulo"
+            android:textColor="@color/color3_claro"
+            android:background="@drawable/borde_color3_pleno"
             android:text="@string/plate_data" />
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <TableLayout
                 android:layout_height="wrap_content"
-                android:text="@string/total_carbs"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textStyle="bold"
-                android:textColor="@color/color3_oscuro" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight=".6"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textStyle="italic|bold"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/colorPrimaryDark"
-                android:id="@+id/carbTotalTV" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="@string/total_insulin"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/color3_oscuro" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight=".6"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textStyle="italic|bold"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/colorPrimaryDark"
-                android:id="@+id/insulinaTotalTV" />
-
-            <TextView
-                style="@style/estiloBotonPequeño"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".4"
-                android:text="@string/ratio"
-                android:background="@drawable/borde_color3_fino"
-                android:textColor="@color/color3_oscuro"
-                android:tag="0"
-                android:onClick="clickRatio"
-                android:id="@+id/fragBuscarAlimentoBT" />
-
+                android:layout_width="match_parent"
+                android:weightSum="4">
+                <TableRow>
+                    <TextView
+                        style="@style/TablaRowTituloLand"
+                        android:text="@string/total_carbs"/>
+                    <TextView
+                        style="@style/TablaRowDato"
+                        android:id="@+id/carbTotalTV"/>
+                    <TextView
+                        style="@style/TablaRowTituloLand"
+                        android:text="@string/total_insulin"/>
+                    <TextView
+                        style="@style/TablaRowDato"
+                        android:id="@+id/insulinaTotalTV"/>
+                </TableRow>
+            </TableLayout>
         </LinearLayout>
-
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -127,50 +81,62 @@
             android:background="@drawable/borde_color3_fino"
             android:onClick="clickLimpiar"
             android:text="@string/clean"
+            android:layout_marginLeft="2dp"
             android:textColor="@color/color3_oscuro"
             android:id="@+id/limpiarBT"/>
 
+        <TextView
+            style="@style/estiloBotonPequeño"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="@string/ratio"
+            android:background="@drawable/borde_color3_fino"
+            android:textColor="@color/color3_oscuro"
+            android:tag="0"
+            android:onClick="clickRatio"
+            android:id="@+id/fragBuscarAlimentoBT" />
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_margin="5dp"
+    <LinearLayout
+        style="@style/LinearLayoutSeccion"
         android:background="@drawable/borde_color3_fino">
 
-        <ListView
-            android:id="@+id/alimentosListaLV"
+        <TextView
+            style="@style/TextViewTitulo"
+            android:textColor="@color/color3_claro"
+            android:background="@drawable/borde_color3_pleno"
+            android:text="@string/food_plate" />
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:divider="@color/color3_oscuro"
-            android:dividerHeight="1dp"
-            android:scrollbarThumbVertical="@drawable/scrollbar_vertical" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:background="@drawable/borde_color3_fino">
+
+            <ListView
+                android:id="@+id/alimentosListaLV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/color3_oscuro"
+                android:dividerHeight="1dp"
+                android:scrollbarThumbVertical="@drawable/scrollbar_vertical" />
 
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="14dp"
-            android:layout_marginBottom="14dp"
-            android:clickable="true"
-            android:onClick="clickAgregarAlimento"
-            android:src="@android:drawable/ic_input_add"
-            android:tint="@android:color/white"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"/>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                style="@style/FABDerecha"
+                android:id="@+id/fabAdd"
+                android:onClick="clickAgregarAlimento"
+                android:src="@drawable/ic_add"
+                app:backgroundTint="@color/color3" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/cancelFAB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="14dp"
-            android:clickable="true"
-            android:onClick="clickFABCancelar"
-            android:src="@drawable/ic_back" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                style="@style/FABIzquierda"
+                android:id="@+id/cancelFAB"
+                android:onClick="clickFABCancelar"
+                app:backgroundTint="@color/color3" />
 
-    </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
 </LinearLayout>

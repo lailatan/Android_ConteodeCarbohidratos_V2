@@ -54,6 +54,7 @@
         <item name="android:textSize">24sp</item>
     </style>
 
+
     <style name="TextViewIngresoDatos">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -133,6 +134,17 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="TablaRowTituloLand">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bordes_tabla</item>
+        <item name="android:textColor">@color/color3</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textSize">24dp</item>
+    </style>
+
     <style name="TablaRowDato">
         <item name="android:layout_weight">1</item>
         <item name="android:layout_width">wrap_content</item>
@@ -141,6 +153,17 @@
         <item name="android:textColor">@color/active</item>
         <item name="android:padding">2dp</item>
         <item name="android:textStyle">italic|bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">24dp</item>
+    </style>
+
+    <style name="TablaRowIngresoDato">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bordes_tabla</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:padding">2dp</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">24dp</item>
     </style>

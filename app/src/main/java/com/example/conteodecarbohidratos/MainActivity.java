@@ -14,14 +14,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void clickAlimentosGenerales(View view) {
-        Intent lanzarBuscarAlimento = new Intent(MainActivity.this, BuscarAlimentoEnTablaActivity.class);
-        startActivity(lanzarBuscarAlimento);
-    }
-
-    public void clickAlimentosPersonales(View view) {
-        Intent lanzarBuscarAlimento = new Intent(MainActivity.this, BuscarAlimentoActivity.class);
-        startActivity(lanzarBuscarAlimento);
+    public void clickArmarComida(View view) {
+        Intent lanzarComida = new Intent(MainActivity.this, ComidaActivity.class);
+        startActivity(lanzarComida);
     }
 
     public void clickBuscarNotas(View view) {
@@ -29,13 +24,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(lanzarBuscarNota);
     }
 
-    public void clickMantenimiento(View view) {
-        Intent lanzarMantenimiento = new Intent(MainActivity.this, MantenimientoActivity.class);
+    public void clickConfigGeneral(View view) {
+        Intent lanzarMantenimiento = new Intent(MainActivity.this, MainGeneralConfigActivity.class);
         startActivity(lanzarMantenimiento);
     }
 
-    public void clickArmarComida(View view) {
-        Intent lanzarComida = new Intent(MainActivity.this, ComidaActivity.class);
-        startActivity(lanzarComida);
-    }
 }
