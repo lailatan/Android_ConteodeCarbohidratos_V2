@@ -18,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.conteodecarbohidratos.clases.Alimento;
 import com.example.conteodecarbohidratos.clases.AlimentoComida;
@@ -186,6 +187,8 @@ public class ComidaActivity extends AppCompatActivity {
             insulina=GlobalInfo.cantidadTotalCarboHidratos/GlobalInfo.ratio;
             insulinaTotalTV.setText(insulina.toString() + " U");
         }else {
+            Toast.makeText(getApplicationContext(), R.string.must_enter_ratio, Toast.LENGTH_LONG).show();
+            //clickRatio();
             insulinaTotalTV.setText("");
         }
     }

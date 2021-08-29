@@ -148,4 +148,5 @@
     <string name="grams2">Gramos </string>
     <string name="calc_carbohydrates">Cálculo de Carbohidratos</string>
     <string name="admin_extra_data">Configurar datos</string>
+    <string name="must_enter_ratio">Debe ingresar el ratio para realizar el cálculo de insulina necesaria.</string>
 </resources>
