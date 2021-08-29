@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.example.conteodecarbohidratos.clases.Alimento;
 import com.example.conteodecarbohidratos.clases.AlimentoComida;
+import com.example.conteodecarbohidratos.clases.GlobalInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,12 +29,10 @@ import java.util.List;
 public class ComidaActivity extends AppCompatActivity {
     private static final String C_ALIMENTO_IDA = "alimentoida";
     private static final String C_ALIMENTO_VUELTA = "alimentovuelta";
-    ArrayList<AlimentoComida> listaDeAlimentos;
+    //ArrayList<AlimentoComida> listaDeAlimentos;
     ListView alimentosListaLV;
     TextView carbTotalTV;
     TextView insulinaTotalTV;
-    Integer cantidadTotalCarboHidratos=0;
-    Float ratio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +41,9 @@ public class ComidaActivity extends AppCompatActivity {
         alimentosListaLV=findViewById(R.id.alimentosListaLV);
         insulinaTotalTV=findViewById(R.id.insulinaTotalTV);
         carbTotalTV=findViewById(R.id.carbTotalTV);
-        listaDeAlimentos=new ArrayList<>();
-
-        ratio=cargarConfiguracion();
+        //listaDeAlimentos=new ArrayList<>();
+        GlobalInfo.ratio=cargarConfiguracion();
+        ActualizarLista();
     }
 
     public void clickFABCancelar(View view) {
@@ -57,13 +56,12 @@ public class ComidaActivity extends AppCompatActivity {
         Intent intent = new Intent(ComidaActivity.this, ComidaSelAlimentoActivity.class);
         intent.putExtra(C_ALIMENTO_IDA, (AlimentoComida) null);
         startActivityForResult(intent,1);
-        //startActivity(intent);
     }
 
     public void LimpiarControles() {
         alimentosListaLV.setAdapter(null);
-        cantidadTotalCarboHidratos=0;
-        listaDeAlimentos.clear();
+        GlobalInfo.cantidadTotalCarboHidratos=0;
+        GlobalInfo.comida.clear();
         carbTotalTV.setText("");
         insulinaTotalTV.setText("");
     }
@@ -88,23 +86,23 @@ public class ComidaActivity extends AppCompatActivity {
     private void AgregarModificarAlimento(AlimentoComida alimento) {
         Integer posicion=BuscarPosicionAlimento(alimento.getMyId(),alimento.getMyEditable());
         if (!(posicion ==-1)) {
-            listaDeAlimentos.get(posicion).setMyUnidadPorcion(alimento.getMyUnidadPorcion());
-            listaDeAlimentos.get(posicion).setMyCantidadPorcion(alimento.getMyCantidadPorcion());
-            listaDeAlimentos.get(posicion).setMyCarbohidratosPorcion(alimento.getMyCarbohidratosPorcion());
-            listaDeAlimentos.get(posicion).setMyUsaGramosComida(alimento.getMyUsaGramosComida());
-            listaDeAlimentos.get(posicion).setMyUnidadComida(alimento.getMyUnidadComida());
-            listaDeAlimentos.get(posicion).setMyCantidadComida(alimento.getMyCantidadComida());
+            GlobalInfo.comida.get(posicion).setMyUnidadPorcion(alimento.getMyUnidadPorcion());
+            GlobalInfo.comida.get(posicion).setMyCantidadPorcion(alimento.getMyCantidadPorcion());
+            GlobalInfo.comida.get(posicion).setMyCarbohidratosPorcion(alimento.getMyCarbohidratosPorcion());
+            GlobalInfo.comida.get(posicion).setMyUsaGramosComida(alimento.getMyUsaGramosComida());
+            GlobalInfo.comida.get(posicion).setMyUnidadComida(alimento.getMyUnidadComida());
+            GlobalInfo.comida.get(posicion).setMyCantidadComida(alimento.getMyCantidadComida());
 
-            cantidadTotalCarboHidratos=cantidadTotalCarboHidratos - listaDeAlimentos.get(posicion).getMyCarbohidratosComida();
-            listaDeAlimentos.get(posicion).setMyCarbohidratosComida(alimento.getMyCarbohidratosComida());
-            cantidadTotalCarboHidratos = cantidadTotalCarboHidratos + alimento.getMyCarbohidratosComida();
+            GlobalInfo.cantidadTotalCarboHidratos -= GlobalInfo.comida.get(posicion).getMyCarbohidratosComida();
+            GlobalInfo.comida.get(posicion).setMyCarbohidratosComida(alimento.getMyCarbohidratosComida());
+            GlobalInfo.cantidadTotalCarboHidratos += alimento.getMyCarbohidratosComida();
         } else {
-            if (listaDeAlimentos==null) {
-                listaDeAlimentos=new ArrayList<>();
+            if (GlobalInfo.comida==null) {
+                GlobalInfo.comida=new ArrayList<>();
             }
-            listaDeAlimentos.add(alimento);
+            GlobalInfo.comida.add(alimento);
             if (!(alimento.getMyCarbohidratosComida()==null))
-                cantidadTotalCarboHidratos=cantidadTotalCarboHidratos + alimento.getMyCarbohidratosComida();
+                GlobalInfo.cantidadTotalCarboHidratos += alimento.getMyCarbohidratosComida();
         }
         ActualizarLista();
     }
@@ -112,8 +110,8 @@ public class ComidaActivity extends AppCompatActivity {
     private void BorrarAlimento(Integer idAlimento, Integer editable) {
         Integer posicion=BuscarPosicionAlimento(idAlimento, editable);
         if (!(posicion ==-1)) {
-            cantidadTotalCarboHidratos=cantidadTotalCarboHidratos - listaDeAlimentos.get(posicion).getMyCarbohidratosComida();
-            listaDeAlimentos.remove(posicion.intValue());
+            GlobalInfo.cantidadTotalCarboHidratos-= GlobalInfo.comida.get(posicion).getMyCarbohidratosComida();
+            GlobalInfo.comida.remove(posicion.intValue());
             ActualizarLista();
         }
     }
@@ -121,14 +119,14 @@ public class ComidaActivity extends AppCompatActivity {
     private void ActualizarLista() {
         alimentosListaLV.setAdapter(null);
         CalcularCHInsulina();
-        ComidaAdapter adaptadorDeListaAlimentos = new ComidaAdapter(getApplicationContext(), listaDeAlimentos);
+        ComidaAdapter adaptadorDeListaAlimentos = new ComidaAdapter(getApplicationContext(), GlobalInfo.comida);
         alimentosListaLV.setAdapter(adaptadorDeListaAlimentos);
         alimentosListaLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 Intent intent = new Intent(ComidaActivity.this, ComidaSelAlimentoActivity.class);
-                intent.putExtra(C_ALIMENTO_IDA, listaDeAlimentos.get(position));
+                intent.putExtra(C_ALIMENTO_IDA, GlobalInfo.comida.get(position));
                 startActivityForResult(intent,1);
 
             }
@@ -137,11 +135,11 @@ public class ComidaActivity extends AppCompatActivity {
 
     private Integer BuscarPosicionAlimento(Integer idAlimento, Integer editable){
         Integer posicion=-1;
-        if (!(listaDeAlimentos==null)) {
-            if (listaDeAlimentos.size() > 0) {
-                for (int i = 0; i < listaDeAlimentos.size(); i++) {
-                    if (listaDeAlimentos.get(i).getMyId().equals(idAlimento)) {
-                            if (listaDeAlimentos.get(i).getMyEditable().equals(editable)) posicion = i;
+        if (!(GlobalInfo.comida==null)) {
+            if (GlobalInfo.comida.size() > 0) {
+                for (int i = 0; i < GlobalInfo.comida.size(); i++) {
+                    if (GlobalInfo.comida.get(i).getMyId().equals(idAlimento)) {
+                            if (GlobalInfo.comida.get(i).getMyEditable().equals(editable)) posicion = i;
                     }
                 }
             }
@@ -149,19 +147,20 @@ public class ComidaActivity extends AppCompatActivity {
         return posicion;
     }
 
+/*
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("carboTotales", cantidadTotalCarboHidratos);
-        outState.putSerializable("alimentos", listaDeAlimentos);
+        outState.putInt("carboTotales", GlobalInfo.cantidadTotalCarboHidratos);
+        outState.putSerializable("alimentos", GlobalInfo.comida);
     }
 
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        cantidadTotalCarboHidratos = savedInstanceState.getInt("carboTotales");
-        listaDeAlimentos = (ArrayList<AlimentoComida>) savedInstanceState.getSerializable("alimentos");
-
-        if (listaDeAlimentos != null)  ActualizarLista();
+        GlobalInfo.cantidadTotalCarboHidratos = savedInstanceState.getInt("carboTotales");
+        GlobalInfo.comida = (ArrayList<AlimentoComida>) savedInstanceState.getSerializable("alimentos");
+        if (GlobalInfo.comida != null)  ActualizarLista();
     }
+*/
 
     //guardar configuración aplicación Android usando SharedPreferences
     private void guardarConfiguracion(Float ratioNuevo) {
@@ -181,10 +180,10 @@ public class ComidaActivity extends AppCompatActivity {
 
     private void CalcularCHInsulina(){
         Float insulina=0F;
-        carbTotalTV.setText(cantidadTotalCarboHidratos.toString() + " grCH");
+        carbTotalTV.setText(GlobalInfo.cantidadTotalCarboHidratos.toString() + " grCH");
 
-        if (!(ratio==0F)){
-            insulina=cantidadTotalCarboHidratos/ratio;
+        if (!(GlobalInfo.ratio==0F)){
+            insulina=GlobalInfo.cantidadTotalCarboHidratos/GlobalInfo.ratio;
             insulinaTotalTV.setText(insulina.toString() + " U");
         }else {
             insulinaTotalTV.setText("");
@@ -199,8 +198,8 @@ public class ComidaActivity extends AppCompatActivity {
         final EditText input = new EditText(this);
         input.setLines(1);
         input.setPadding(100,100,100,20);
-        if (ratio==0) input.setText("");
-        else input.setText(ratio.toString());
+        if (GlobalInfo.ratio==0) input.setText("");
+        else input.setText(GlobalInfo.ratio.toString());
         input.setTextColor(this.getResources().getColor(R.color.colorPrimaryDark));
         input.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
         builder.setView(input);
@@ -210,10 +209,10 @@ public class ComidaActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 String nuevoRatio = input.getText().toString();
                 if (!nuevoRatio.isEmpty()){
-                    ratio=Float.parseFloat((nuevoRatio));
-                    guardarConfiguracion(ratio);
+                    GlobalInfo.ratio=Float.parseFloat((nuevoRatio));
+                    guardarConfiguracion(GlobalInfo.ratio);
                 } else {
-                    ratio=0F;
+                    GlobalInfo.ratio=0F;
                 }
                 CalcularCHInsulina();
             }

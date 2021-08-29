@@ -104,200 +104,259 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginRight="5dp"
                             android:gravity="center"
-                            android:orientation="horizontal">
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            android:id="@+id/datosAlimentoLL">
 
-                            <TextView
-                                android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textStyle="bold|italic"
+                                android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:text="@string/category"/>
+                                android:gravity="center"
+                                android:orientation="horizontal">
 
-                            <TextView
-                                android:layout_width="0dp"
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold|italic"
+                                    android:layout_marginRight="5dp"
+                                    android:textColor="@color/colorPrimaryDark_enabled"
+                                    android:text="@string/category"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginRight="5dp"
+                                    android:textColor="@color/colorPrimaryDark_enabled"
+                                    android:id="@+id/fragCategoriaTV" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
+                                android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:id="@+id/fragCategoriaTV" />
+                                android:gravity="center"
+                                android:orientation="horizontal">
 
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold|italic"
+                                    android:layout_marginRight="5dp"
+                                    android:textColor="@color/colorPrimaryDark_enabled"
+                                    android:text="@string/brand"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginRight="5dp"
+                                    android:textColor="@color/colorPrimaryDark_enabled"
+                                    android:id="@+id/fragMarcaTV" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold|italic"
+                                    android:layout_marginRight="5dp"
+                                    android:textColor="@color/colorPrimaryDark_enabled"
+                                    android:text="@string/unit"
+                                    android:id="@+id/fragPorcionUniLBL"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginRight="5dp"
+                                    android:textColor="@color/colorPrimaryDark_enabled"
+                                    android:id="@+id/fragPorcionUniTV" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:orientation="horizontal"
+                                android:id="@+id/fragPorcionCantLL">
+
+                                <TableLayout
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="match_parent"
+                                    android:weightSum="6">
+                                    <TableRow>
+                                        <TextView
+                                            style="@style/TablaRowTitulo"
+                                            android:layout_width="0dp"
+                                            android:layout_weight=".25"
+                                            android:textColor="@color/colorPrimaryDark_enabled"
+                                            android:text="@string/quantity"/>
+                                        <TextView
+                                            style="@style/TablaRowTitulo"
+                                            android:layout_width="0dp"
+                                            android:layout_weight=".4"
+                                            android:textColor="@color/colorPrimaryDark_enabled"
+                                            android:text="@string/equiv_grams_optional"/>
+                                        <TextView
+                                            style="@style/TablaRowTitulo"
+                                            android:layout_width="0dp"
+                                            android:layout_weight=".35"
+                                            android:textColor="@color/colorPrimaryDark_enabled"
+                                            android:text="@string/equiv_grams_carbs"/>
+                                    </TableRow>
+                                    <TableRow>
+                                        <EditText
+                                            style="@style/TablaRowIngresoDato"
+                                            android:layout_width="0dp"
+                                            android:layout_weight=".25"
+                                            android:textColor="@color/colorPrimaryDark_enabled"
+                                            android:id="@+id/fragPorcionCantTV" />
+                                        <EditText
+                                            style="@style/TablaRowIngresoDato"
+                                            android:layout_width="0dp"
+                                            android:layout_weight=".4"
+                                            android:textColor="@color/colorPrimaryDark_enabled"
+                                            android:id="@+id/fragPorcionGrTV" />
+                                        <EditText
+                                            style="@style/TablaRowIngresoDato"
+                                            android:layout_width="0dp"
+                                            android:layout_weight=".35"
+                                            android:textColor="@color/colorPrimaryDark_enabled"
+                                            android:id="@+id/fragCarboTV" />
+                                    </TableRow>
+                                </TableLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:orientation="horizontal"
+                                android:id="@+id/fragTiempoEsperaLL">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold|italic"
+                                    android:layout_marginRight="5dp"
+                                    android:textColor="@color/colorPrimaryDark_enabled"
+                                    android:text="@string/waiting_time"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorPrimaryDark_enabled"
+                                    android:id="@+id/fragTiempoEsperaTV" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold|italic"
+                                    android:layout_marginRight="5dp"
+                                    android:textColor="@color/colorPrimaryDark_enabled"
+                                    android:text="@string/for_celiac"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorPrimaryDark_enabled"
+                                    android:id="@+id/fragAptoCelTV" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold|italic"
+                                    android:layout_marginRight="5dp"
+                                    android:textColor="@color/colorPrimaryDark_enabled"
+                                    android:text="  /  "/>
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold|italic"
+                                    android:layout_marginRight="5dp"
+                                    android:textColor="@color/colorPrimaryDark_enabled"
+                                    android:text="@string/fast_absorption"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorPrimaryDark_enabled"
+                                    android:id="@+id/fragAbsRapidaTV" />
+                            </LinearLayout>
                         </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textStyle="bold|italic"
-                                android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:text="@string/brand"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:id="@+id/fragMarcaTV" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textStyle="bold|italic"
-                                android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:text="@string/unit"
-                                android:id="@+id/fragPorcionUniLBL"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:id="@+id/fragPorcionUniTV" />
-                        </LinearLayout>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
-                            android:orientation="horizontal"
-                            android:id="@+id/fragPorcionCantLL">
-
-                            <TableLayout
-                                android:layout_height="wrap_content"
+                            android:background="@drawable/borde_color3_fino"
+                            android:orientation="vertical">
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:weightSum="6">
-                                <TableRow>
-                                    <TextView
-                                        style="@style/TablaRowTitulo"
-                                        android:layout_width="0dp"
-                                        android:layout_weight=".25"
-                                        android:textColor="@color/colorPrimaryDark_enabled"
-                                        android:text="@string/quantity"/>
-                                    <TextView
-                                        style="@style/TablaRowTitulo"
-                                        android:layout_width="0dp"
-                                        android:layout_weight=".4"
-                                        android:textColor="@color/colorPrimaryDark_enabled"
-                                        android:text="@string/equiv_grams_optional"/>
-                                    <TextView
-                                        style="@style/TablaRowTitulo"
-                                        android:layout_width="0dp"
-                                        android:layout_weight=".35"
-                                        android:textColor="@color/colorPrimaryDark_enabled"
-                                        android:text="@string/equiv_grams_carbs"/>
-                                </TableRow>
-                                <TableRow>
-                                    <EditText
-                                        style="@style/TablaRowIngresoDato"
-                                        android:layout_width="0dp"
-                                        android:layout_weight=".25"
-                                        android:textColor="@color/colorPrimaryDark_enabled"
-                                        android:id="@+id/fragPorcionCantTV" />
-                                    <EditText
-                                        style="@style/TablaRowIngresoDato"
-                                        android:layout_width="0dp"
-                                        android:layout_weight=".4"
-                                        android:textColor="@color/colorPrimaryDark_enabled"
-                                        android:id="@+id/fragPorcionGrTV" />
-                                    <EditText
-                                        style="@style/TablaRowIngresoDato"
-                                        android:layout_width="0dp"
-                                        android:layout_weight=".35"
-                                        android:textColor="@color/colorPrimaryDark_enabled"
-                                        android:id="@+id/fragCarboTV" />
-                                </TableRow>
-                            </TableLayout>
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:orientation="horizontal">
+
+                                <RadioGroup
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="right"
+                                    android:id="@+id/mostrarRG">
+
+                                    <RadioButton
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginRight="10dp"
+                                        android:textStyle="italic"
+                                        android:textSize="12dp"
+                                        android:scaleX="0.75"
+                                        android:scaleY="0.75"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:text="@string/hide"
+                                        android:checked="true"
+                                        android:tag="0"
+                                        android:onClick="clickMostrarDatosAlimento"
+                                        android:id="@+id/ocultarRB"/>
+
+                                    <RadioButton
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginRight="10dp"
+                                        android:textStyle="italic"
+                                        android:textSize="12dp"
+                                        android:scaleX="0.75"
+                                        android:scaleY="0.75"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:text="@string/show"
+                                        android:tag="1"
+                                        android:onClick="clickMostrarDatosAlimento"
+                                        android:id="@+id/mostrarRB"/>
+                                </RadioGroup>
+                            </LinearLayout>
                         </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:orientation="horizontal"
-                            android:id="@+id/fragTiempoEsperaLL">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textStyle="bold|italic"
-                                android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:text="@string/waiting_time"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:id="@+id/fragTiempoEsperaTV" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginRight="5dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textStyle="bold|italic"
-                                android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:text="@string/for_celiac"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:id="@+id/fragAptoCelTV" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textStyle="bold|italic"
-                                android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:text="  /  "/>
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textStyle="bold|italic"
-                                android:layout_marginRight="5dp"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:text="@string/fast_absorption"/>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/colorPrimaryDark_enabled"
-                                android:id="@+id/fragAbsRapidaTV" />
-                        </LinearLayout>
-
                     </LinearLayout>
-
                 </LinearLayout>
 
                 <LinearLayout

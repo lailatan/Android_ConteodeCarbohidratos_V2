@@ -87,6 +87,7 @@ public class ComidaSelAlimentoActivity extends AppCompatActivity {
             CargarAlimento(alimento);
             fragNombreTV.setEnabled(false);
             fragBuscarAlimentoBT.setVisibility(View.GONE);
+            fragCantidadET.requestFocus();
         } else {
             FloatingActionButton fabDelete =  findViewById(R.id.deleteFAB);
             fabDelete.setVisibility(View.GONE);
@@ -333,6 +334,7 @@ public class ComidaSelAlimentoActivity extends AppCompatActivity {
             Integer alimento = data.getIntExtra(C_ALIMENTOBUSQUEDA,0);
             Integer editable = data.getIntExtra(C_ALIMENTOBUSQUEDAEDITABLE,0);
             CargarDatosAlimento(alimento,editable);
+            fragCantidadET.requestFocus();
         }
     }
 
@@ -470,9 +472,9 @@ public class ComidaSelAlimentoActivity extends AppCompatActivity {
         {
             public void onClick(DialogInterface dialog, int which)
             {
-                //fragNombreTV.setText("");
-                //fragCantidadET.setText("0");
-                //fragCarboEquivalentesTV.setText("0");
+                fragNombreTV.setText("");
+                fragCantidadET.setText("0");
+                fragCarboEquivalentesTV.setText("0");
                 mVolversinCambios=false;
                 onBackPressed();
             }
@@ -552,4 +554,12 @@ public class ComidaSelAlimentoActivity extends AppCompatActivity {
         }
         if (!(fragNombreTV.getText().toString().isEmpty())) CalcularCarbs();
     }
+
+    public void clickMostrarDatosAlimento(View view) {
+        LinearLayout datosAlimentoLL =  findViewById(R.id.datosAlimentoLL);
+        //Utils.hideKeyboard(this);
+        if (Integer.parseInt(((RadioButton)view).getTag().toString())==0) datosAlimentoLL.setVisibility(View.GONE);
+        else datosAlimentoLL.setVisibility(View.VISIBLE);
+    }
+
 }
