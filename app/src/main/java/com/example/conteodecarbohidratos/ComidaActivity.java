@@ -180,11 +180,11 @@ public class ComidaActivity extends AppCompatActivity {
     }
 
     private void CalcularCHInsulina(){
-        Float insulina=0F;
+        Double insulina=0.0;
         carbTotalTV.setText(GlobalInfo.cantidadTotalCarboHidratos.toString() + " grCH");
 
         if (!(GlobalInfo.ratio==0F)){
-            insulina=GlobalInfo.cantidadTotalCarboHidratos/GlobalInfo.ratio;
+            insulina=Utils.redondear(GlobalInfo.cantidadTotalCarboHidratos/GlobalInfo.ratio,1);
             insulinaTotalTV.setText(insulina.toString() + " U");
         }else {
             Toast.makeText(getApplicationContext(), R.string.must_enter_ratio, Toast.LENGTH_LONG).show();

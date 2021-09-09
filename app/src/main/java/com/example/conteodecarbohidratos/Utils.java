@@ -184,4 +184,8 @@ public class Utils {
         }
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
+    public static double redondear (double value, int precision) {
+        int scale = (int) Math.pow(10, precision);
+        return (double) Math.round(value * scale) / scale;
+    }
 }
